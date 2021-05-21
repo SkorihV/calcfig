@@ -1,0 +1,985 @@
+@import url('../scripts/jQueryFormStyler-master/dist/jquery.formstyler.css');
+@import url('../scripts/jQueryFormStyler-master/dist/jquery.formstyler.theme.css');
+
+
+// TODO: Очистить содержимое файла (все для примера)
+
+.calc {
+  width: 700px;
+  background: #FFF;
+  padding: 60px 60px 32px 60px;
+  margin: auto 0 0 auto;
+  font-family: Arial, sans-serif;
+  position: relative;
+
+//  &-wrapper {
+    //  На выходе будет класс .calc-wrapper
+ // }
+
+  // Этот кусок кода из моего калькулятора. Оставляю в качестве примера.
+  // Пока не заморачивайся, просто глянь как можно по умному писать стили)
+  // Хоть это и не лучший пример, но все равно должен быть полезен
+  @for $i from 1 through 3 {
+    &[js-step="#{$i}"] {
+      .calc__header {
+        &-step:nth-child(#{$i}) {
+          opacity: 1;
+
+          &:before {
+            background: #FBB040;
+          }
+        }
+      }
+
+      @media screen and (max-width: 864px) {
+        @if $i == 2 {
+          .calc__header-step:nth-child(1) {
+            display: none;
+          }
+        }
+        @if $i == 3 {
+          .calc__header-step:nth-child(1) {
+            display: none;
+          }
+          .calc__header-step:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+
+      .calc__status {
+        &:before {
+          @if $i == 1 {
+            width: 240px;
+
+            @media screen and (max-width: 864px) {
+              width: 33%;
+            }
+          }
+
+          @if $i == 2 {
+            width: 430px;
+
+            @media screen and (max-width: 864px) {
+              width: 66%;
+            }
+          }
+
+          @if $i == 3 {
+            width: 100%;
+          }
+        }
+      }
+      .calc__content.step#{$i} {
+        display: block;
+      }
+    }
+  }
+}
+
+$color-orange: #FBB040;
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.standart-felds {
+	display: flex;
+	justify-content: flex-start;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+.dislpay-none {
+	display: none!important;
+}
+
+.container-box {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	max-width: 50%;
+	width: 100%;
+	padding: 10px;
+}
+
+.form-test-fields {
+	width: 100%;
+}
+
+.box-title {
+	font-family: Bliss Pro;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 34px;
+}
+
+.box-field-buttons {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.box-field-buttons .boxes {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	width: 100%;
+}
+
+.box-field-buttons .sub-title {
+	font-family: Bliss Pro;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 34px;
+	width: 50%;
+}
+
+.box-container-list {
+	margin: 10px;
+	width: 100%;
+}
+
+.boxes-chek {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	width: 100%;
+
+	>.box-fields {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 25%;
+		padding: 5px;
+	}
+}
+
+.box-field  {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 5px;
+}
+
+.boxes-selector-list {
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+/*******Начало стилей элементов калькулятора*****/
+
+/*Кнопка начало*/
+
+.calc__button-next-step {
+	background: #1BAD58;
+	border: 1px solid #1BAD58;
+	box-sizing: border-box;
+	border-radius: 300px;
+	padding: 17px 43px;
+	display: flex;
+	align-items: center;
+	font-family: Bliss Pro;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 120%;
+	color: white;
+	cursor: pointer;
+	margin-left: auto;
+
+	>svg {
+		padding-left: 24px;
+	}
+
+	&:hover {
+		background-color: #8DD6AB;	
+		border-color: #8DD6AB;	
+	}
+
+	&_hover {
+		background-color: #8DD6AB;
+		border-color: #8DD6AB;	
+	}
+}
+
+.calc__button-back-step {
+	font-family: Bliss Pro;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 120%;
+	color: #1BAD58;
+	width: 243px;
+	border: 1px solid white;
+	box-sizing: border-box;
+	border-radius: 300px;
+	padding: 17px 43px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+
+	>svg {
+		padding-right: 24px;
+	}
+
+	&:hover {
+		color: #8DD6AB;
+	}
+
+	&_hover {
+		color: #8DD6AB;
+	}
+}
+
+/*Кнопка конец*/
+
+/*Начало эелемента списка с чекбоксом*/
+
+.calc__box-element-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: stretch;
+	padding: 15px;
+	width: 100%;
+	background: #F5F5F5;
+	border: 1px solid #E1E5E7;
+	box-sizing: border-box;
+	border-radius: 30px;
+}
+
+/*конец элемента списка*/
+
+/*Чекбокс начало*/
+
+.calc__checbox-container {
+	position: relative;
+	display: flex;
+	width: 100%;
+
+	.calc__checkbox {
+		opacity: 0;
+		display: none;
+
+		+ .calc__checkbox-label::after {
+			content: "";
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			position: absolute;
+			border: 2px solid $color-orange;
+			box-sizing: border-box;
+			border-radius: 4px;
+			width: 20px;
+			height: 20px;
+			right: 0%;
+		}
+
+		&:checked + .calc__checkbox-label::after { 
+			content: "✔";
+			background: $color-orange;
+		}
+	}
+
+	.calc__checkbox-label {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		padding-right: 25px;
+		height: 25px;
+		position: relative;
+		width: 100%;
+		cursor: pointer;
+		font-family: Bliss Pro;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 108.5%;
+
+		&.calc__checkbox_active {
+			&::after {
+				content: "✔";
+				background: $color-orange;
+			}
+		}
+	}
+}
+
+/*Чекбокс конец*/
+
+/*Плюс минус начало*/
+
+.calc__button {
+	&-plus,
+	&-minus  {
+		border: 2px solid $color-orange;
+		box-sizing: border-box;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		color: $color-orange;
+		font-weight: bold;
+		line-height: 20px;
+		cursor: pointer;
+	}
+	&-plus_disabled,
+	&-minus_disabled {
+		border: 2px solid #E1E5E7;
+		color: #E1E5E7;
+	}
+}
+
+/*Плюс минус конец*/ 
+
+/*Радио кнопки начало*/
+
+.calc__radio-container {
+	position: relative;
+	margin: 1px;
+	display: flex;
+	flex-grow: 1;
+
+	.calc__radio-button {
+		display: none;
+
+		&:checked + .calc__radio-label::before {
+			box-shadow: 0 0 0px 5px #ffffff inset;
+			background: $color-orange;
+		}
+	}
+
+	.calc__radio-label {
+		border: 1px solid #E1E5E7;
+		box-sizing: border-box;
+		border-radius: 300px;
+		padding: 15px;
+		padding-left: 50px;
+		text-align: center;
+		vertical-align: middle;
+		cursor: pointer;
+		flex-grow: 1;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			border: 1px solid $color-orange;
+			box-sizing: border-box;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			left: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+/*радио кнопки конец*/
+
+.boxes-card-lists {
+	width: 100%;
+}
+
+/*Карточка с полями начало*/
+
+.calc__box-card-list {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	margin: 5px 0;
+	border: 1px solid #E1E5E7;
+	box-sizing: border-box;
+	border-radius: 30px;
+	padding: 15px 15px 15px 35px;
+	.calc__card-list-title {
+		flex-grow: 4;
+		font-family: Bliss Pro;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+	}
+	.calc__card-list-folder-wrapper {
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+		max-width: 50%;
+		width: 100%;
+		.calc__card-list {
+			&-long,
+			&-width,
+			&-area {
+				margin: 0 7px;
+				position: relative;
+				flex-grow: 1;
+				max-width: 33%;
+				.calc__card-list-input {
+					box-sizing: border-box;
+					width: 100%;
+					border: none;
+					line-height: 20px;
+					border-bottom: 1px solid #B5B9BA;
+					flex-grow: 1;
+					&:focus {
+						outline: none;
+					}
+	
+					&:focus + .calc__card-list-label,
+					&:hover + .calc__card-list-label,
+					& + .calc__card-list-label:hover,
+					&_opened + .calc__card-list-label {
+						transform: translateY(-10px);
+						font-size: 10px;
+					}
+				}
+	
+				.calc__card-list-label {
+					display: flex;
+					position: absolute;
+					top: 3px;
+					left: 0px;
+					color: #B5B9BA;
+					cursor: pointer;
+					transition-property: transform, font-size;
+					transition-delay: 0.2s, 0.2s;
+					transition-duration: 0.5s, 0.5s;
+					transition-timing-function: linear, linear;
+	
+					.calc__sup {
+						vertical-align: super;
+						font-size: 12px;
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+
+/*Карточка с полями конец*/
+
+/* карточка с возможностью выбора количества начало*/
+
+.calc__box-card-list-current {
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 15px;
+	border-bottom: 1px solid #F2F2F2;
+
+	.calc__card-list-current-title {
+		flex-grow: 2;
+		font-family: Bliss Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 19px;
+	}
+
+	.calc__card-list-current-num-box {
+		display: flex;
+		flex-direction: row;
+		width: 80px;
+		justify-content: space-between;
+		border: none;
+
+		.calc__card-list-current-imput {
+			width: 20px;
+			border: none;
+			font-family: Bliss Pro;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 21px;
+			color: #333333;
+			text-align: center;
+		}
+	}
+}
+/*карточка с возможностью выбора количества конец*/
+
+
+/*Селекторы начало */
+.jq-selectbox  {
+	width: 100%;
+
+	&.dropdown {
+		.jq-selectbox__dropdown {
+			border-bottom-left-radius: 25px;
+			border-bottom-right-radius: 25px;
+			padding-bottom: 20px;
+		}
+	}
+
+	&.dropup {
+		.jq-selectbox__dropdown {
+			border-top-left-radius: 25px;
+			border-top-right-radius: 25px;
+			padding-top: 20px;
+			box-shadow: 0px 23px 0px 0px #f5f5f5;
+		}
+	}
+		
+	.jq-selectbox__dropdown {
+		background: #F5F5F5;
+		box-shadow: 0px -23px 0px 0px #f5f5f5;
+		border: none;
+		background: #f5f5f5;
+	}
+
+	li, 
+	.jq-select-multiple li {
+		font-family: Bliss Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 108.5%;
+		color: #333333;
+		&:hover {
+			background: $color-orange;
+		}
+		&.selected {
+			background: $color-orange;	
+		}
+	}
+
+	.placeholder {
+		font-family: Bliss Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 119%;
+		color: #B5B9BA;
+	}
+
+	.jq-selectbox__select {
+		background: white;
+		border: 1px solid #E1E5E7;
+		box-sizing: border-box;
+		border-radius: 300px;
+		box-shadow: none;
+		padding: 15px;
+		height: auto;
+		z-index: 1;
+	
+		.jq-selectbox__select-text {
+			font-family: Bliss Pro;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 119%;
+			padding-right: 20px;
+			width: 100%;
+		}
+	
+		.jq-selectbox__trigger {
+			border-left: none;
+	
+			.jq-selectbox__trigger-arrow {
+				top: 50%;
+				transform: translateY(-50%);
+				border-top: 7px solid #B5B9BA;
+				border-right: 7px solid transparent;
+				border-left: 7px solid transparent;
+			}
+		}
+	}
+}
+
+/*селекторы конец*/
+
+/*Мультиселектор начало*/
+
+.calc__multiselect-list {
+  display: flex;
+  flex-direction: column;
+	width: 100%;
+	.calc__box-element-list {
+		display: none;
+		.calc__checbox-container {
+			padding: 5px;
+			box-sizing: border-box;
+			&:last-child {
+				.calc__checkbox-label {
+					padding-bottom: 30px;
+				}
+			}
+		}
+	}
+
+  &-title {
+    background: #FFFFFF;
+    border: 1px solid #E1E5E7;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-family: Bliss Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+		padding: 15px;
+		position: relative;
+		cursor: pointer;
+		&::before {
+			position: absolute;
+			content: "";
+			right: 10px;
+			top: 20%;
+			width: 8px;
+			height: 8px;
+			transform: rotate(45deg) translateY(91%);
+			border-right: 4px solid #333333;
+			border-bottom: 4px solid #333333;
+		}	
+
+		&_open + .calc__box-element-list {
+			display: flex;
+		}
+
+		&:hover {
+			border-color: $color-orange;
+		}
+  }
+}
+/*Мультиселектор конец*/
+
+/*Блок с табами  начало*/
+
+.calc__tabs-block {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #E1E5E7;
+	box-sizing: border-box;
+	border-radius: 300px;
+	width: 100%;
+	cursor: pointer;
+	.calc__tab {
+    padding: 15px 27px;
+    border-right: 1px solid #E1E5E7;
+    height: 30px;
+    line-height: 30px;
+		width: 100%;
+		&_active,
+		&:hover {
+			background: #E1E5E7;
+		}
+		&:last-child {
+			border-right: none;
+			border-top-right-radius: 300px;
+			border-bottom-right-radius: 300px;
+		}
+		&:first-child {
+			border-top-left-radius: 300px;
+			border-bottom-left-radius: 300px;
+		}
+	}
+}
+
+/*блок с табами конец*/
+
+/*блок с табами и нумерацией начало*/
+
+.calc__tabs-block-numeric {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	width: 100%;
+	position: relative;
+	.calc__tab {
+		padding: 15px 25px 15px 0;
+    height: 30px;
+    line-height: 30px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		font-family: Bliss Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		line-height: 108.5%;
+		position: relative;
+		width: 100%;
+
+		& + .calc__tab-contains {
+			display: none;
+		}
+
+		&-num {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background: $color-orange;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: Bliss Pro;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 108.5%;
+			margin-right: 14px;
+		}
+
+		&::before {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 5px;
+			background: #E1E5E7;
+			bottom: 0;
+			left: 0;
+		}
+
+		&:last-child::before {
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+
+		&:first-child::before {
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+
+		&_active {
+			&::before {
+				background: $color-orange;
+			}
+
+			& + .calc__tab-contains {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100%;
+			}
+		}
+
+		&:hover {
+			background: #E1E5E7;
+		}
+
+		&:hover::before {
+			background: $color-orange;
+		}
+
+	}
+}
+
+.calc__tabs-content-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	
+	.calc__tab-contains {
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+
+		&_active {
+			display: flex;
+		}
+	}
+}
+
+/*блок с табами и нумерацией конец*/
+
+/* отдельный лок с выбором количества*/
+
+.calc__current-control-panel {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 122px;
+	border: 1px solid #E1E5E7;
+	box-sizing: border-box;
+	border-radius: 300px;
+	padding: 15px;
+	cursor: pointer;
+	.calc__current-control-panel-input {
+		width: 25px;
+		border: none;
+		border-bottom: 1px solid #000;
+		font-family: Bliss Pro;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 119%;
+		text-align: center;
+	}
+
+}
+
+/* отдельный блок с выбором количества*/
+
+/*Инпуты*/
+.calc__input-item {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	border: 1px solid #B5B9BA;
+	box-sizing: border-box;
+	border-radius: 300px;
+	padding: 15px;
+	line-height: 16px;
+	font-family: Bliss Pro;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 119%;
+	width: 100%;
+	color: #333333;
+	&:disabled {
+		color: #B5B9BA;
+	}
+}
+
+.calc__big-title {
+	font-family: Bliss Pro;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 34px;
+	display: flex;
+	align-items: center;
+}
+
+.calc__small-title {
+	font-family: Bliss Pro;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 119%;
+	display: flex;
+	align-items: center;
+	color: #333333;
+}
+
+.calc__text {
+	font-family: Bliss Pro;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 127%;
+	display: flex;
+	align-items: center;
+	color: #333333;
+	opacity: 0.7;
+}
+
+/*Начало стилей самого калькуляторв*/
+
+.calc-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	height: auto;
+	position: relative;
+	background: white;
+	margin-bottom: 200px;
+	.calc__left-half {
+		max-width: 820px;
+		flex-grow: 2;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.calc__right-half {
+		background: #E0E0E0;
+	}
+}
+
+.calc__person-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	width: 100%;
+	margin: 10px 0;
+	.calc__preson-side {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		margin: 0 10px;
+	}
+	.calc__small-title {
+		display: flex;
+    justify-content: flex-start;
+    width: 100%;
+		margin-bottom: 5px;
+	}
+}
+
+.calc__center-side {
+	display: flex;
+	width: 100%;
+	justify-content: flex-start;
+
+	.calc__box-element-list {
+		max-width: 257px;
+		nav-right: 15px;
+	}
+	.calc__input-item {
+		max-width: 150px;
+	}
+}
+
+.calc__rooms-area-radio {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin-bottom: 10px;
+	.calc__radio-container {
+		flex-grow: 1;
+	}
+}
+
+.calc__rooms-area-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	width: 100%;
+	border-bottom: 1px solid #E0E0E0;
+	margin-bottom: 10px;
+
+	.calc__rooms-area-contant {
+		max-height: 150px;
+		height: auto;
+		overflow-x: none;
+		overflow-y: scroll;
+		padding: 10px 0;
+		display: none;
+		flex-direction: column;
+		&_active {
+			display: flex;			
+		}
+	}
+}
+
+.calc__box-card-list {
+	.calc__button-plus {
+		margin-left: auto;
+	}
+}
