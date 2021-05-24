@@ -1802,3 +1802,13 @@ body {
   color: #1BAD58;
   background-color: white;
 }
+
+@media all and (max-width: 1024px) {
+  .calc-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .calc-wrapper .calc__right-half {
+    margin-top: 30px;
+  }
+}
