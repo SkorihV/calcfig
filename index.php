@@ -250,15 +250,12 @@
         <div class="calc__tab calc__tab_active" data-tab-num="1">
           <span class="calc__tab-num">1</span>Параметры помещений
         </div>
-        <div class="calc__tab-contains"></div>
         <div class="calc__tab" data-tab-num="2">
           <span class="calc__tab-num">2</span>Опции ремонта
         </div>
-        <div class="calc__tab-contains"></div>
         <div class="calc__tab" data-tab-num="3">
           <span class="calc__tab-num">3</span>Материалы
         </div>
-        <div class="calc__tab-contains"></div>
       </div>
     </div>
 
@@ -334,20 +331,21 @@
       <div class="calc__text">Заполните габариты помещений. Если выяснить габариты помещений невозможно, нажмите вкладку "Только общая площадь"</div>
       <div class="calc__rooms-area-radio">
         <div class="calc__radio-container">
-          <input class="calc__radio-button" type="radio" name="room-area" id="room-area1">
+          <input class="calc__radio-button" type="radio" name="room-area" id="room-area1"  data-tab-num="1">
           <label for="room-area1" class="calc__radio-label">Все данные</label>
         </div>
         <div class="calc__radio-container">
-          <input class="calc__radio-button" type="radio" name="room-area" id="room-area2">
+          <input class="calc__radio-button" type="radio" name="room-area" id="room-area2"  data-tab-num="2">
           <label for="room-area2" class="calc__radio-label">Только площадь комнат</label>
         </div>
         <div class="calc__radio-container">
-          <input class="calc__radio-button" type="radio" name="room-area" id="room-area3">
+          <input class="calc__radio-button" type="radio" name="room-area" id="room-area3" data-tab-num="3">
           <label for="room-area3" class="calc__radio-label">Только общая площадь</label>
         </div>        
       </div>
       <div class="calc__rooms-area-wrapper">
-        <div class="calc__rooms-area-contant calc__rooms-area-contant_active" data-area-tab-num="1">
+<!-- начало первого таба в радио группе подбора площади-->
+        <div class="calc__rooms-area-contant" data-tab-num="1">
           <div class="calc__box-card-list">
             <div class="calc__card-list-title">Комната 1</div>
             <div class="calc__card-list-folder-wrapper">
@@ -389,27 +387,403 @@
               <div class="calc__button-plus">+</div>
             </div>
           </div>
+        </div>
+<!-- начало второго таба в радио группе подбора площади-->
+        <div class="calc__rooms-area-contant" data-tab-num="2">
+          <div class="calc__box-card-list">
+            <div class="calc__card-list-title">Комната 1</div>
+            <div class="calc__card-list-folder-wrapper"> 
+              <div class="calc__card-list-area">
+                <input class="calc__card-list-input" type="text" size="3">
+                <label class="calc__card-list-label">Площадь</label>
+              </div>
+              <div class="calc__button-plus">+</div>
+            </div>
+          </div>
+          <div class="calc__box-card-list">
+            <div class="calc__card-list-title">Кухня</div>
+            <div class="calc__card-list-folder-wrapper"> 
+              <div class="calc__card-list-area">
+                <input class="calc__card-list-input" type="text" size="3">
+                <label class="calc__card-list-label">Площадь</label>
+              </div>
+              <div class="calc__button-plus">+</div>
+            </div>
+          </div>
+          <div class="calc__box-card-list">
+            <div class="calc__card-list-title">Коридор</div>
+            <div class="calc__card-list-folder-wrapper"> 
+              <div class="calc__card-list-area">
+                <input class="calc__card-list-input" type="text" size="3">
+                <label class="calc__card-list-label">Площадь</label>
+              </div>
+              <div class="calc__button-plus">+</div>
+            </div>
+          </div>
+          <div class="calc__box-card-list">
+            <div class="calc__card-list-title">Зал</div>
+            <div class="calc__card-list-folder-wrapper"> 
+              <div class="calc__card-list-area">
+                <input class="calc__card-list-input" type="text" size="3">
+                <label class="calc__card-list-label">Площадь</label>
+              </div>
+              <div class="calc__button-plus">+</div>
+            </div>
+          </div>
+          <div class="calc__box-card-list">
+            <div class="calc__card-list-title">Ванная</div>
+            <div class="calc__card-list-folder-wrapper"> 
+              <div class="calc__card-list-area">
+                <input class="calc__card-list-input" type="text" size="3">
+                <label class="calc__card-list-label">Площадь</label>
+              </div>
+              <div class="calc__button-plus">+</div>
+            </div>
+          </div>
+        </div>
+<!-- начало третьего таба в радио группе подбора площади-->
+        <div class="calc__rooms-area-contant" data-tab-num="3">
+          <div class="calc__box-card-list">
+            <div class="calc__card-list-title">Общая площадь квартиры</div>
+            <div class="calc__card-list-folder-wrapper"> 
+              <div class="calc__card-list-area">
+                <input class="calc__card-list-input" type="text" size="3">
+                <label class="calc__card-list-label">Площадь</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="calc__navigation-panel">
+        <div class="calc__button-next-step">Следующий шаг
+          <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M13.5306 6.39386C13.8235 6.10096 13.8235 5.62609 13.5306 5.3332L8.75766 0.560225C8.46477 0.267331 7.9899 0.267331 7.697 0.560225C7.40411 0.853118 7.40411 1.32799 7.697 1.62088L11.9396 5.86353L7.697 10.1062C7.40411 10.3991 7.40411 10.8739 7.697 11.1668C7.9899 11.4597 8.46477 11.4597 8.75766 11.1668L13.5306 6.39386ZM0.000305176 6.61353H13.0003V5.11353H0.000305176V6.61353Z"
+              fill="white" />
+          </svg>
+        </div>
+      </div>
 
+    </div>
+    <!--Второй шаг -->
+    <div class="calc__tab-contains" data-tab-num="2">
+<!-- Начало блока со списком списков-->
+    <div class="calc__multiselect-list-wrapper">
+      <div class="calc__multiselect-list" data-name-group="heating">
+        <div class="calc__multiselect-list-title">Отопление</div>
+        <div class="calc__box-element-list">
+          <div class="calc__checbox-container">
+            <input id="chek-mul-heating-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-heating-1" class="calc__checkbox-label">Замена систем отопления на коллекторную (лучевую)</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-heating-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-heating-2" class="calc__checkbox-label">Замена радиаторов"</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc__multiselect-list" >
+        <div class="calc__multiselect-list-title" data-name-group="noise">Шумоизоляция</div>
+        <div class="calc__box-element-list">
+          <div class="calc__checbox-container">
+            <input id="chek-mul-noise-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-noise-1" class="calc__checkbox-label">Шумоизоляция стен</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-noise-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-noise-2" class="calc__checkbox-label">Шумоизоляция потолка"</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-noise-3" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-noise-3" class="calc__checkbox-label">Шумоизоляция пола</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc__multiselect-list" >
+        <div class="calc__multiselect-list-title" data-name-group="vibration">Вибрация и электропароводка</div>
+        <div class="calc__box-element-list">
+          <div class="calc__checbox-container">
+            <input id="chek-mul-vibration-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-vibration-1" class="calc__checkbox-label">Приточная вентиляция</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-vibration-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-vibration-2" class="calc__checkbox-label">Электропроводка по потолку</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc__multiselect-list" >
+        <div class="calc__multiselect-list-title" data-name-group="roof">Потолок</div>
+        <div class="calc__box-element-list">
+          <div class="calc__checbox-container">
+            <input id="chek-mul-roof-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-roof-1" class="calc__checkbox-label">Натяжной потолок</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-roof-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-roof-2" class="calc__checkbox-label">ГКЛ потолок</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-roof-3" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-roof-3" class="calc__checkbox-label">ГКЛ потолок + натяжной в санузлах</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-roof-4" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-roof-4" class="calc__checkbox-label">Штукатурка потолка</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc__multiselect-list" >
+        <div class="calc__multiselect-list-title" data-name-group="floor">Пол</div>
+        <div class="calc__box-element-list">
+          <div class="calc__checbox-container">
+            <input id="chek-mul-floor-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-floor-1" class="calc__checkbox-label">Ламинат</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-floor-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-floor-2" class="calc__checkbox-label">Паркетная доска на подложку (только ПИК)</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-floor-3" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-floor-3" class="calc__checkbox-label">Паркетная доска на клей (только ПИК)</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc__multiselect-list" >
+        <div class="calc__multiselect-list-title" data-name-group="bathroom">Санузел</div>
+        <div class="calc__box-element-list">
+          <div class="calc__checbox-container">
+            <input id="chek-mul-bathroom-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-bathroom-1" class="calc__checkbox-label">Трубы водопроводные Rehau</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-bathroom-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-bathroom-2" class="calc__checkbox-label">Система защиты от протечек</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-bathroom-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-bathroom-2" class="calc__checkbox-label">Теплый пол в СУ</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc__multiselect-list" >
+        <div class="calc__multiselect-list-title" data-name-group="window">Окна и балкон</div>
+        <div class="calc__box-element-list">
+          <div class="calc__checbox-container">
+            <input id="chek-mul-window-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-window-1" class="calc__checkbox-label">Утепление балкона</label>
+          </div>
+          <div class="calc__checbox-container">
+            <input id="chek-mul-window-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="chek-mul-window-2" class="calc__checkbox-label">Подоконники из искусственного камня</label>
+          </div>
+        </div>
+      </div>      
+    </div>
+<!-- Конец блока со списком списков-->
+      <div class="calc__white-box">
+        <div class="calc__box-element-list">
+          <div class="calc__checbox-container">
+            <input id="white-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <label for="white-1" class="calc__checkbox-label">Ремонт "white Box"</label>
+          </div>
+        </div>
+      </div>
+      .
+
+      <div class="calc__navigation-panel"> 
+        <div class="calc__button-back-step">
+          <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967L5.24264 0.696699C5.53553 0.403806 6.01041 0.403806 6.3033 0.696699C6.59619 0.989593 6.59619 1.46447 6.3033 1.75736L2.06066 6L6.3033 10.2426C6.59619 10.5355 6.59619 11.0104 6.3033 11.3033C6.01041 11.5962 5.53553 11.5962 5.24264 11.3033L0.46967 6.53033ZM14 6.75H1V5.25H14V6.75Z"
+              fill="#1BAD58" />
+          </svg>
+          Назад
+        </div>
+        <div class="calc__button-next-step">Следующий шаг
+          <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M13.5306 6.39386C13.8235 6.10096 13.8235 5.62609 13.5306 5.3332L8.75766 0.560225C8.46477 0.267331 7.9899 0.267331 7.697 0.560225C7.40411 0.853118 7.40411 1.32799 7.697 1.62088L11.9396 5.86353L7.697 10.1062C7.40411 10.3991 7.40411 10.8739 7.697 11.1668C7.9899 11.4597 8.46477 11.4597 8.75766 11.1668L13.5306 6.39386ZM0.000305176 6.61353H13.0003V5.11353H0.000305176V6.61353Z"
+              fill="white" />
+          </svg>
+        </div>
+      </div>
+
+    </div>
+
+<!--третий третий -->
+    <div class="calc__tab-contains" data-tab-num="3">
+      <div class="calc__tabs-block"> 
+        <div class="calc__tab" data-tab-num="1">Сантехника</div>
+        <div class="calc__tab" data-tab-num="2">Кондиционирование</div>
+        <div class="calc__tab" data-tab-num="3">Отделочные материалы</div>
+      </div>
+      <div class="calc__tabs-blocks-content-wrapper">
+        <div class="calc__tab-block-content" data-tab-num="1">
+          
+          <div class="calc__box-card-list-wrapper">
+            <div class="calc__box-card-list-current">          
+              <div class="calc__card-list-current-title">Ванна</div>
+              <div class="calc__card-list-current-num-box">
+                <div class="calc__button-minus">-</div>
+                <input type="text" class="calc__card-list-current-imput" value="0" size="3">
+                <div class="calc__button-plus">+</div>
+              </div>
+            </div>
+
+            <div class="calc__box-card-list-current">          
+              <div class="calc__card-list-current-title">Душевая кабина / поддон</div>
+              <div class="calc__card-list-current-num-box">
+                <div class="calc__button-minus">-</div>
+                <input type="text" class="calc__card-list-current-imput" value="0" size="3">
+                <div class="calc__button-plus">+</div>
+              </div>
+            </div>
+
+            <div class="calc__box-card-list-current">          
+              <div class="calc__card-list-current-title">Унитаз напольный</div>
+              <div class="calc__card-list-current-num-box">
+                <div class="calc__button-minus">-</div>
+                <input type="text" class="calc__card-list-current-imput" value="0" size="3">
+                <div class="calc__button-plus">+</div>
+              </div>
+            </div>
+
+            <div class="calc__box-card-list-current">          
+              <div class="calc__card-list-current-title">Унитаз с инсталяцией</div>
+              <div class="calc__card-list-current-num-box">
+                <div class="calc__button-minus">-</div>
+                <input type="text" class="calc__card-list-current-imput" value="0" size="3">
+                <div class="calc__button-plus">+</div>
+              </div>
+            </div>
+
+            <div class="calc__box-card-list-current">          
+              <div class="calc__card-list-current-title">Раковина</div>
+              <div class="calc__card-list-current-num-box">
+                <div class="calc__button-minus">-</div>
+                <input type="text" class="calc__card-list-current-imput" value="0" size="3">
+                <div class="calc__button-plus">+</div>
+              </div>
+            </div>
+          
+
+            <div class="calc__box-card-list-current">          
+              <div class="calc__card-list-current-title">Раковина</div>
+              <div class="calc__card-list-current-num-box">
+                <div class="calc__button-minus">-</div>
+                <input type="text" class="calc__card-list-current-imput" value="0" size="3">
+                <div class="calc__button-plus">+</div>
+              </div>
+            </div>
+
+            <div class="calc__box-card-list-current">          
+              <div class="calc__card-list-current-title">Полотенцесушитель</div>
+              <div class="calc__card-list-current-num-box">
+                <div class="calc__button-minus">-</div>
+                <input type="text" class="calc__card-list-current-imput" value="0" size="3">
+                <div class="calc__button-plus">+</div>
+              </div>
+            </div>
+
+            <div class="calc__box-card-list-current">          
+              <div class="calc__card-list-current-title">Водонагреватель / бойлер</div>
+              <div class="calc__card-list-current-num-box">
+                <div class="calc__button-minus">-</div>
+                <input type="text" class="calc__card-list-current-imput" value="0" size="3">
+                <div class="calc__button-plus">+</div>
+              </div>
+            </div>
+
+            <div class="calc__box-card-list-current">          
+              <div class="calc__card-list-current-title">Гигиенический душ</div>
+              <div class="calc__card-list-current-num-box">
+                <div class="calc__button-minus">-</div>
+                <input type="text" class="calc__card-list-current-imput" value="0" size="3">
+                <div class="calc__button-plus">+</div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="calc__rooms-area-contant" data-area-tab-num="2">
+        <div class="calc__tab-block-content" data-tab-num="2">
+          <div class="calc__box-card-list-current">          
+            <div class="calc__card-list-current-title">Кондиционирование</div>
+            <div class="calc__card-list-current-num-box">
+              <div class="calc__button-minus">-</div>
+              <input type="text" class="calc__card-list-current-imput" value="0" size="3">
+              <div class="calc__button-plus">+</div>
+            </div>
+          </div>
+
+          <div class="calc__box-element-list">
+            <div class="calc__checbox-container">
+              <input id="fank-1" type="checkbox" class="calc__checkbox" value="chek1">
+              <label for="fank-1" class="calc__checkbox-label">Установлен фанкойл</label>
+            </div>
+          </div>
+
+          <div class="calc__box-element-list">
+            <div class="calc__checbox-container">
+              <input id="copper-pipes-1" type="checkbox" class="calc__checkbox" value="chek1">
+              <label for="copper-pipes-1" class="calc__checkbox-label">Установка медных трасс по квартире от застройщика</label>
+            </div>
+          </div>
 
         </div>
-        <div class="calc__rooms-area-contant" data-area-tab-num="3">
+        <div class="calc__tab-block-content" data-tab-num="3">
+
+        <div class="boxes-selector-list">
+          <select class="calc__selector-list" data-placeholder="Выберите менеджера">
+            <option value="Выберите менеджера">Выберите менеджера</option>
+            <option value="Малютин Илья">Малютин Илья</option>
+            <option value="Ферман Александра">Ферман Александра</option>
+          </select>
+        </div>
+
+        <div class="calc__box-element-list">
+
+            <div class="calc__checbox-container-befor">
+              <div class="sub-title-checkbox-before">Розетки / выключатели</div>
+              <input id="standart-1" type="checkbox" class="calc__checkbox" value="chek1">
+              <label for="standart-1" class="calc__checkbox-label">Стандарт</label>
+
+              <input id="premium-1" type="checkbox" class="calc__checkbox" value="chek1">
+              <label for="premium-1" class="calc__checkbox-label">Премиум</label>
+            </div>
+          </div>
+
+          <div class="calc__box-element-list">
+            <div class="calc__checbox-container-befor">
+              <div class="sub-title-checkbox-before">Цвет стен</div>
+              <input id="standart-2" type="checkbox" class="calc__checkbox" value="chek1">
+              <label for="standart-2" class="calc__checkbox-label">Стандарт</label>
+
+              <input id="premium-2" type="checkbox" class="calc__checkbox" value="chek1">
+              <label for="premium-2" class="calc__checkbox-label">Индвивидуальна колеровка</label>
+            </div>
+          </div>
 
         </div>
       </div>
-      <div class="calc__button-next-step">Следующий шаг
-            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M13.5306 6.39386C13.8235 6.10096 13.8235 5.62609 13.5306 5.3332L8.75766 0.560225C8.46477 0.267331 7.9899 0.267331 7.697 0.560225C7.40411 0.853118 7.40411 1.32799 7.697 1.62088L11.9396 5.86353L7.697 10.1062C7.40411 10.3991 7.40411 10.8739 7.697 11.1668C7.9899 11.4597 8.46477 11.4597 8.75766 11.1668L13.5306 6.39386ZM0.000305176 6.61353H13.0003V5.11353H0.000305176V6.61353Z"
-                fill="white" />
-            </svg>
-          </div>
+      <div class="calc__navigation-panel"> 
+        <div class="calc__button-back-step">
+          <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967L5.24264 0.696699C5.53553 0.403806 6.01041 0.403806 6.3033 0.696699C6.59619 0.989593 6.59619 1.46447 6.3033 1.75736L2.06066 6L6.3033 10.2426C6.59619 10.5355 6.59619 11.0104 6.3033 11.3033C6.01041 11.5962 5.53553 11.5962 5.24264 11.3033L0.46967 6.53033ZM14 6.75H1V5.25H14V6.75Z"
+              fill="#1BAD58" />
+          </svg>
+          Назад
+        </div>
+      </div>
     </div>
-    <!--Второй шаг -->
-    <div class="calc__tab-contains" data-tab-num="2">222222</div>
-    <div class="calc__tab-contains" data-tab-num="3">333</div>
   </div>
   <div class="calc__right-half"></div>
 </form>

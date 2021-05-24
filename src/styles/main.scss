@@ -1,87 +1,86 @@
-@import url('../scripts/jQueryFormStyler-master/dist/jquery.formstyler.css');
-@import url('../scripts/jQueryFormStyler-master/dist/jquery.formstyler.theme.css');
-
+@import url("../scripts/jQueryFormStyler-master/dist/jquery.formstyler.css");
+@import url("../scripts/jQueryFormStyler-master/dist/jquery.formstyler.theme.css");
 
 // TODO: Очистить содержимое файла (все для примера)
 
 .calc {
-  width: 700px;
-  background: #FFF;
-  padding: 60px 60px 32px 60px;
-  margin: auto 0 0 auto;
-  font-family: Arial, sans-serif;
-  position: relative;
+	width: 700px;
+	background: #fff;
+	padding: 60px 60px 32px 60px;
+	margin: auto 0 0 auto;
+	font-family: Arial, sans-serif;
+	position: relative;
 
-//  &-wrapper {
-    //  На выходе будет класс .calc-wrapper
- // }
+	//  &-wrapper {
+	//  На выходе будет класс .calc-wrapper
+	// }
 
-  // Этот кусок кода из моего калькулятора. Оставляю в качестве примера.
-  // Пока не заморачивайся, просто глянь как можно по умному писать стили)
-  // Хоть это и не лучший пример, но все равно должен быть полезен
-  @for $i from 1 through 3 {
-    &[js-step="#{$i}"] {
-      .calc__header {
-        &-step:nth-child(#{$i}) {
-          opacity: 1;
+	// Этот кусок кода из моего калькулятора. Оставляю в качестве примера.
+	// Пока не заморачивайся, просто глянь как можно по умному писать стили)
+	// Хоть это и не лучший пример, но все равно должен быть полезен
+	@for $i from 1 through 3 {
+		&[js-step="#{$i}"] {
+			.calc__header {
+				&-step:nth-child(#{$i}) {
+					opacity: 1;
 
-          &:before {
-            background: #FBB040;
-          }
-        }
-      }
+					&:before {
+						background: #fbb040;
+					}
+				}
+			}
 
-      @media screen and (max-width: 864px) {
-        @if $i == 2 {
-          .calc__header-step:nth-child(1) {
-            display: none;
-          }
-        }
-        @if $i == 3 {
-          .calc__header-step:nth-child(1) {
-            display: none;
-          }
-          .calc__header-step:nth-child(2) {
-            display: none;
-          }
-        }
-      }
+			@media screen and (max-width: 864px) {
+				@if $i == 2 {
+					.calc__header-step:nth-child(1) {
+						display: none;
+					}
+				}
+				@if $i == 3 {
+					.calc__header-step:nth-child(1) {
+						display: none;
+					}
+					.calc__header-step:nth-child(2) {
+						display: none;
+					}
+				}
+			}
 
-      .calc__status {
-        &:before {
-          @if $i == 1 {
-            width: 240px;
+			.calc__status {
+				&:before {
+					@if $i == 1 {
+						width: 240px;
 
-            @media screen and (max-width: 864px) {
-              width: 33%;
-            }
-          }
+						@media screen and (max-width: 864px) {
+							width: 33%;
+						}
+					}
 
-          @if $i == 2 {
-            width: 430px;
+					@if $i == 2 {
+						width: 430px;
 
-            @media screen and (max-width: 864px) {
-              width: 66%;
-            }
-          }
+						@media screen and (max-width: 864px) {
+							width: 66%;
+						}
+					}
 
-          @if $i == 3 {
-            width: 100%;
-          }
-        }
-      }
-      .calc__content.step#{$i} {
-        display: block;
-      }
-    }
-  }
+					@if $i == 3 {
+						width: 100%;
+					}
+				}
+			}
+			.calc__content.step#{$i} {
+				display: block;
+			}
+		}
+	}
 }
 
-$color-orange: #FBB040;
+$color-orange: #fbb040;
 
 body {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .standart-felds {
@@ -92,7 +91,7 @@ body {
 }
 
 .dislpay-none {
-	display: none!important;
+	display: none !important;
 }
 
 .container-box {
@@ -110,7 +109,6 @@ body {
 
 .box-title {
 	font-family: Bliss Pro;
-	font-style: normal;
 	font-weight: bold;
 	font-size: 32px;
 	line-height: 34px;
@@ -131,7 +129,6 @@ body {
 
 .box-field-buttons .sub-title {
 	font-family: Bliss Pro;
-	font-style: normal;
 	font-weight: bold;
 	font-size: 16px;
 	line-height: 34px;
@@ -149,7 +146,7 @@ body {
 	justify-content: flex-start;
 	width: 100%;
 
-	>.box-fields {
+	> .box-fields {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -158,7 +155,7 @@ body {
 	}
 }
 
-.box-field  {
+.box-field {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -170,6 +167,7 @@ body {
 .boxes-selector-list {
 	margin-bottom: 10px;
 	width: 100%;
+	position: relative;
 }
 
 /*******Начало стилей элементов калькулятора*****/
@@ -177,44 +175,43 @@ body {
 /*Кнопка начало*/
 
 .calc__button-next-step {
-	background: #1BAD58;
-	border: 1px solid #1BAD58;
+	background: #1bad58;
+	border: 1px solid #1bad58;
 	box-sizing: border-box;
 	border-radius: 300px;
 	padding: 17px 43px;
 	display: flex;
 	align-items: center;
 	font-family: Bliss Pro;
-	font-style: normal;
 	font-weight: bold;
 	font-size: 16px;
 	line-height: 120%;
 	color: white;
 	cursor: pointer;
 	margin-left: auto;
+	flex: 0 1 250px;
 
-	>svg {
+	> svg {
 		padding-left: 24px;
 	}
 
 	&:hover {
-		background-color: #8DD6AB;	
-		border-color: #8DD6AB;	
+		background-color: #8dd6ab;
+		border-color: #8dd6ab;
 	}
 
 	&_hover {
-		background-color: #8DD6AB;
-		border-color: #8DD6AB;	
+		background-color: #8dd6ab;
+		border-color: #8dd6ab;
 	}
 }
 
 .calc__button-back-step {
 	font-family: Bliss Pro;
-	font-style: normal;
 	font-weight: bold;
 	font-size: 16px;
 	line-height: 120%;
-	color: #1BAD58;
+	color: #1bad58;
 	width: 243px;
 	border: 1px solid white;
 	box-sizing: border-box;
@@ -223,17 +220,19 @@ body {
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	flex: 0 1 250px;
+	margin-right: auto;
 
-	>svg {
+	> svg {
 		padding-right: 24px;
 	}
 
 	&:hover {
-		color: #8DD6AB;
+		color: #8dd6ab;
 	}
 
 	&_hover {
-		color: #8DD6AB;
+		color: #8dd6ab;
 	}
 }
 
@@ -247,8 +246,8 @@ body {
 	justify-content: stretch;
 	padding: 15px;
 	width: 100%;
-	background: #F5F5F5;
-	border: 1px solid #E1E5E7;
+	background: #f5f5f5;
+	border: 1px solid #e1e5e7;
 	box-sizing: border-box;
 	border-radius: 30px;
 }
@@ -260,8 +259,6 @@ body {
 .calc__checbox-container {
 	position: relative;
 	display: flex;
-	width: 100%;
-
 	.calc__checkbox {
 		opacity: 0;
 		display: none;
@@ -281,7 +278,7 @@ body {
 			right: 0%;
 		}
 
-		&:checked + .calc__checkbox-label::after { 
+		&:checked + .calc__checkbox-label::after {
 			content: "✔";
 			background: $color-orange;
 		}
@@ -291,13 +288,12 @@ body {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		flex: 1 1 100%;
 		padding-right: 25px;
 		height: 25px;
 		position: relative;
-		width: 100%;
 		cursor: pointer;
 		font-family: Bliss Pro;
-		font-style: normal;
 		font-weight: 500;
 		font-size: 18px;
 		line-height: 108.5%;
@@ -317,7 +313,7 @@ body {
 
 .calc__button {
 	&-plus,
-	&-minus  {
+	&-minus {
 		border: 2px solid $color-orange;
 		box-sizing: border-box;
 		display: flex;
@@ -333,12 +329,12 @@ body {
 	}
 	&-plus_disabled,
 	&-minus_disabled {
-		border: 2px solid #E1E5E7;
-		color: #E1E5E7;
+		border: 2px solid #e1e5e7;
+		color: #e1e5e7;
 	}
 }
 
-/*Плюс минус конец*/ 
+/*Плюс минус конец*/
 
 /*Радио кнопки начало*/
 
@@ -358,7 +354,7 @@ body {
 	}
 
 	.calc__radio-label {
-		border: 1px solid #E1E5E7;
+		border: 1px solid #e1e5e7;
 		box-sizing: border-box;
 		border-radius: 300px;
 		padding: 15px;
@@ -397,65 +393,61 @@ body {
 	flex-direction: row;
 	align-items: center;
 	justify-content: flex-start;
-	width: 100%;
 	margin: 5px 0;
-	border: 1px solid #E1E5E7;
+	border: 1px solid #e1e5e7;
 	box-sizing: border-box;
 	border-radius: 30px;
 	padding: 15px 15px 15px 35px;
 	.calc__card-list-title {
 		flex-grow: 4;
 		font-family: Bliss Pro;
-		font-style: normal;
 		font-weight: 500;
 		font-size: 18px;
 	}
 	.calc__card-list-folder-wrapper {
 		display: flex;
 		flex-direction: row;
-		flex-grow: 1;
+		flex: 1 1 100%;
 		max-width: 50%;
-		width: 100%;
 		.calc__card-list {
 			&-long,
 			&-width,
 			&-area {
 				margin: 0 7px;
 				position: relative;
-				flex-grow: 1;
+				flex: 1 1 30%;
 				max-width: 33%;
 				.calc__card-list-input {
 					box-sizing: border-box;
 					width: 100%;
 					border: none;
 					line-height: 20px;
-					border-bottom: 1px solid #B5B9BA;
+					border-bottom: 1px solid #b5b9ba;
 					flex-grow: 1;
 					&:focus {
 						outline: none;
 					}
-	
+
 					&:focus + .calc__card-list-label,
 					&:hover + .calc__card-list-label,
 					& + .calc__card-list-label:hover,
-					&_opened + .calc__card-list-label {
+					&_active + .calc__card-list-label {
 						transform: translateY(-10px);
 						font-size: 10px;
 					}
 				}
-	
 				.calc__card-list-label {
 					display: flex;
 					position: absolute;
 					top: 3px;
 					left: 0px;
-					color: #B5B9BA;
+					color: #b5b9ba;
 					cursor: pointer;
 					transition-property: transform, font-size;
 					transition-delay: 0.2s, 0.2s;
 					transition-duration: 0.5s, 0.5s;
 					transition-timing-function: linear, linear;
-	
+
 					.calc__sup {
 						vertical-align: super;
 						font-size: 12px;
@@ -464,9 +456,7 @@ body {
 			}
 		}
 	}
-	
 }
-
 
 /*Карточка с полями конец*/
 
@@ -477,23 +467,20 @@ body {
 	position: relative;
 	justify-content: space-between;
 	align-items: center;
-	width: 100%;
 	padding: 15px;
-	border-bottom: 1px solid #F2F2F2;
-
+	border-bottom: 1px solid #f2f2f2;
 	.calc__card-list-current-title {
-		flex-grow: 2;
 		font-family: Bliss Pro;
-		font-style: normal;
 		font-weight: normal;
 		font-size: 16px;
 		line-height: 19px;
+		flex: 2 1 100%;
 	}
 
 	.calc__card-list-current-num-box {
 		display: flex;
 		flex-direction: row;
-		width: 80px;
+		flex: 1 1 80px;
 		justify-content: space-between;
 		border: none;
 
@@ -501,7 +488,6 @@ body {
 			width: 20px;
 			border: none;
 			font-family: Bliss Pro;
-			font-style: normal;
 			font-weight: 500;
 			font-size: 18px;
 			line-height: 21px;
@@ -512,9 +498,8 @@ body {
 }
 /*карточка с возможностью выбора количества конец*/
 
-
 /*Селекторы начало */
-.jq-selectbox  {
+.jq-selectbox {
 	width: 100%;
 
 	&.dropdown {
@@ -522,6 +507,7 @@ body {
 			border-bottom-left-radius: 25px;
 			border-bottom-right-radius: 25px;
 			padding-bottom: 20px;
+			width: 100%;
 		}
 	}
 
@@ -533,18 +519,17 @@ body {
 			box-shadow: 0px 23px 0px 0px #f5f5f5;
 		}
 	}
-		
+
 	.jq-selectbox__dropdown {
-		background: #F5F5F5;
+		background: #f5f5f5;
 		box-shadow: 0px -23px 0px 0px #f5f5f5;
 		border: none;
 		background: #f5f5f5;
 	}
 
-	li, 
+	li,
 	.jq-select-multiple li {
 		font-family: Bliss Pro;
-		font-style: normal;
 		font-weight: normal;
 		font-size: 16px;
 		line-height: 108.5%;
@@ -553,46 +538,44 @@ body {
 			background: $color-orange;
 		}
 		&.selected {
-			background: $color-orange;	
+			background: $color-orange;
 		}
 	}
 
 	.placeholder {
 		font-family: Bliss Pro;
-		font-style: normal;
 		font-weight: normal;
 		font-size: 16px;
 		line-height: 119%;
-		color: #B5B9BA;
+		color: #b5b9ba;
 	}
 
 	.jq-selectbox__select {
 		background: white;
-		border: 1px solid #E1E5E7;
+		border: 1px solid #e1e5e7;
 		box-sizing: border-box;
 		border-radius: 300px;
 		box-shadow: none;
 		padding: 15px;
 		height: auto;
 		z-index: 1;
-	
+
 		.jq-selectbox__select-text {
 			font-family: Bliss Pro;
-			font-style: normal;
 			font-weight: normal;
 			font-size: 16px;
 			line-height: 119%;
 			padding-right: 20px;
 			width: 100%;
 		}
-	
+
 		.jq-selectbox__trigger {
 			border-left: none;
-	
+
 			.jq-selectbox__trigger-arrow {
 				top: 50%;
 				transform: translateY(-50%);
-				border-top: 7px solid #B5B9BA;
+				border-top: 7px solid #b5b9ba;
 				border-right: 7px solid transparent;
 				border-left: 7px solid transparent;
 			}
@@ -605,9 +588,11 @@ body {
 /*Мультиселектор начало*/
 
 .calc__multiselect-list {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	position: relative;
+	flex-direction: column;
 	width: 100%;
+	margin: 8px 0;
 	.calc__box-element-list {
 		display: none;
 		.calc__checbox-container {
@@ -621,16 +606,15 @@ body {
 		}
 	}
 
-  &-title {
-    background: #FFFFFF;
-    border: 1px solid #E1E5E7;
-    box-sizing: border-box;
-    border-radius: 30px;
-    font-family: Bliss Pro;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 21px;
+	&-title {
+		background: #ffffff;
+		border: 1px solid #e1e5e7;
+		box-sizing: border-box;
+		border-radius: 30px;
+		font-family: Bliss Pro;
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 21px;
 		padding: 15px;
 		position: relative;
 		cursor: pointer;
@@ -644,16 +628,20 @@ body {
 			transform: rotate(45deg) translateY(91%);
 			border-right: 4px solid #333333;
 			border-bottom: 4px solid #333333;
-		}	
+		}
 
 		&_open + .calc__box-element-list {
 			display: flex;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			z-index: 10;
 		}
 
 		&:hover {
 			border-color: $color-orange;
 		}
-  }
+	}
 }
 /*Мультиселектор конец*/
 
@@ -664,20 +652,21 @@ body {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid #E1E5E7;
+	border: 1px solid #e1e5e7;
 	box-sizing: border-box;
 	border-radius: 300px;
 	width: 100%;
 	cursor: pointer;
+	margin: 8px 0;
 	.calc__tab {
-    padding: 15px 27px;
-    border-right: 1px solid #E1E5E7;
-    height: 30px;
-    line-height: 30px;
-		width: 100%;
+		padding: 15px 27px;
+		border-right: 1px solid #e1e5e7;
+		height: 30px;
+		line-height: 30px;
+		flex: 1 1 33.333%;
 		&_active,
 		&:hover {
-			background: #E1E5E7;
+			background: #e1e5e7;
 		}
 		&:last-child {
 			border-right: none;
@@ -705,19 +694,18 @@ body {
 	position: relative;
 	.calc__tab {
 		padding: 15px 25px 15px 0;
-    height: 30px;
-    line-height: 30px;
+		height: 30px;
+		line-height: 30px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 		font-family: Bliss Pro;
-		font-style: normal;
 		font-weight: normal;
 		font-size: 16px;
 		line-height: 108.5%;
 		position: relative;
-		width: 100%;
+		flex: 1 1 33.333%;
 
 		& + .calc__tab-contains {
 			display: none;
@@ -732,7 +720,6 @@ body {
 			justify-content: center;
 			align-items: center;
 			font-family: Bliss Pro;
-			font-style: normal;
 			font-weight: 500;
 			font-size: 16px;
 			line-height: 108.5%;
@@ -744,7 +731,7 @@ body {
 			content: "";
 			width: 100%;
 			height: 5px;
-			background: #E1E5E7;
+			background: #e1e5e7;
 			bottom: 0;
 			left: 0;
 		}
@@ -773,13 +760,12 @@ body {
 		}
 
 		&:hover {
-			background: #E1E5E7;
+			background: #e1e5e7;
 		}
 
 		&:hover::before {
 			background: $color-orange;
 		}
-
 	}
 }
 
@@ -787,12 +773,10 @@ body {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	
+
 	.calc__tab-contains {
 		display: none;
 		flex-direction: column;
-		align-items: center;
-		width: 100%;
 
 		&_active {
 			display: flex;
@@ -810,7 +794,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	width: 122px;
-	border: 1px solid #E1E5E7;
+	border: 1px solid #e1e5e7;
 	box-sizing: border-box;
 	border-radius: 300px;
 	padding: 15px;
@@ -820,13 +804,11 @@ body {
 		border: none;
 		border-bottom: 1px solid #000;
 		font-family: Bliss Pro;
-		font-style: normal;
 		font-weight: 500;
 		font-size: 16px;
 		line-height: 119%;
 		text-align: center;
 	}
-
 }
 
 /* отдельный блок с выбором количества*/
@@ -836,26 +818,24 @@ body {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	border: 1px solid #B5B9BA;
+	border: 1px solid #b5b9ba;
 	box-sizing: border-box;
 	border-radius: 300px;
 	padding: 15px;
 	line-height: 16px;
 	font-family: Bliss Pro;
-	font-style: normal;
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 119%;
 	width: 100%;
 	color: #333333;
 	&:disabled {
-		color: #B5B9BA;
+		color: #b5b9ba;
 	}
 }
 
 .calc__big-title {
 	font-family: Bliss Pro;
-	font-style: normal;
 	font-weight: bold;
 	font-size: 32px;
 	line-height: 34px;
@@ -865,7 +845,6 @@ body {
 
 .calc__small-title {
 	font-family: Bliss Pro;
-	font-style: normal;
 	font-weight: bold;
 	font-size: 16px;
 	line-height: 119%;
@@ -876,7 +855,6 @@ body {
 
 .calc__text {
 	font-family: Bliss Pro;
-	font-style: normal;
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 127%;
@@ -907,7 +885,7 @@ body {
 	}
 
 	.calc__right-half {
-		background: #E0E0E0;
+		background: #e0e0e0;
 	}
 }
 
@@ -926,8 +904,8 @@ body {
 	}
 	.calc__small-title {
 		display: flex;
-    justify-content: flex-start;
-    width: 100%;
+		justify-content: flex-start;
+		width: 100%;
 		margin-bottom: 5px;
 	}
 }
@@ -961,7 +939,6 @@ body {
 	flex-direction: column;
 	align-items: stretch;
 	width: 100%;
-	border-bottom: 1px solid #E0E0E0;
 	margin-bottom: 10px;
 
 	.calc__rooms-area-contant {
@@ -973,7 +950,7 @@ body {
 		display: none;
 		flex-direction: column;
 		&_active {
-			display: flex;			
+			display: flex;
 		}
 	}
 }
@@ -981,5 +958,88 @@ body {
 .calc__box-card-list {
 	.calc__button-plus {
 		margin-left: auto;
+	}
+}
+
+.calc__navigation-panel {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding-top: 25px;
+	margin-top: 10px;
+	border-top: 1px solid #e0e0e0;
+}
+
+.calc__multiselect-list-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.calc__white-box {
+	display: flex;
+	max-width: 50%;
+	width: 100%;
+}
+
+.calc__tabs-blocks-content-wrapper {
+	& .calc__tab-block-content {
+		display: none;
+		&_active {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+.calc__box-card-list-wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-height: 400px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-right: 20px;
+	box-sizing: border-box;
+}
+
+.calc__checbox-container-befor {
+	position: relative;
+	display: flex;
+	input {
+		opacity: 0;
+		display: none;
+	}
+	.sub-title-checkbox-before {
+		flex: 2 1 33.333%;
+	}
+	.calc__checkbox-label {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		flex: 1 1 100%;
+		padding-left: 25px;
+		height: 25px;
+		position: relative;
+		cursor: pointer;
+		font-family: Bliss Pro;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 108.5%;
+		flex: 1 1 24%;
+		&::before {
+			content: "";
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			position: absolute;
+			border: 2px solid #fbb040;
+			box-sizing: border-box;
+			border-radius: 4px;
+			width: 20px;
+			height: 20px;
+			left: 0%;
+		}
 	}
 }

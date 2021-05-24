@@ -1,17 +1,32 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
   const multipleElementItem = document.querySelectorAll(".calc__multiselect-list");
-  const cardList = document.querySelectorAll(".calc__box-card-list input");
-  const tabsListNumeric = document.querySelectorAll(".calc__tabs-block-numeric .calc__tab");
-  const tabContantList = document.querySelectorAll(".calc__tabs-content-wrapper .calc__tab-contains");
+  const cardList = document.querySelectorAll("input.calc__card-list-input");
+  const currentBoxes = document.querySelectorAll(".calc__card-list-current-num-box");
+
+  /*Обрабатываем все элементы с выбором количества */
+
+  currentBoxes.forEach(item => {
+    item.addEventListener("click", (e) => {
+      const inputCurrent = item.querySelector(".calc__card-list-current-imput");
+      console.log(inputCurrent.value);
+
+      const target = e.target;
+      if (target.classList.contains("calc__button-plus")) {
+
+      }
+
+      if (target.classList.contains("calc__button-minus")) {
+
+      }
+    })
+  });
 
   let openMultilist = (e) => {
     e.target.classList.toggle("calc__multiselect-list-title_open");
   }
   if (multipleElementItem) {
-    multipleElementItem.forEach(item => {
+    multipleElementItem.forEach((item, index) => {
       item.addEventListener("click", openMultilist);
     });
   }
@@ -19,43 +34,53 @@ document.addEventListener("DOMContentLoaded", () => {
   /*Добавляем небольшие эффекты для импутов с подсказками*/
   let changeinputCardList = (e) => {
     if (e.target.value > 0) {
-      e.target.classList.add("calc__card-list-input_opened");
+      e.target.classList.add("calc__card-list-input_active");
     } else {
-      e.target.classList.remove("calc__card-list-input_opened");
+      e.target.classList.remove("calc__card-list-input_active");
     };
   };
   if (cardList) {
-    cardList.forEach(item => {
+    cardList.forEach((item, index) => {
       item.addEventListener("change", changeinputCardList);
     });
   }
 
   /*Обрабатываем нажатие на блок шагов */
 
-  let openStepsTab = (e) => {
-    tabsListNumeric.forEach(item => {
-      item.classList.remove("calc__tab_active");
-    });
-    e.target.classList.add("calc__tab_active");
-    let tabNum = e.target.getAttribute("data-tab-num");
-    if (tabContantList) {
-      tabContantList.forEach(item => {
-        if (item.getAttribute("data-tab-num") == tabNum) {
-          tabContantList.forEach(item2 => {
-            item2.classList.remove("calc__tab-contains_active");
-          });
-          item.classList.add("calc__tab-contains_active");
-        }
+  function tabElementActivation(wrapperNavigation, tabsElements) {
+    const panel = document.querySelectorAll(wrapperNavigation);
+    const tabs = document.querySelectorAll(tabsElements);
+    if (!panel || !tabs) return;
+
+    let panelSelectorActive = wrapperNavigation.split(" ");
+    let tabsSelectorActive = tabsElements.split(" ");
+    panelSelectorActive = panelSelectorActive[1].slice(1) + "_active";
+    tabsSelectorActive = tabsSelectorActive[1].slice(1) + "_active";
+
+    panel.forEach(tabControl => {
+      tabControl.addEventListener("click", (e) => {
+        panel.forEach(item => {
+          item.classList.remove(panelSelectorActive);
+        });
+        e.target.classList.add(panelSelectorActive);
+        let tabNum = e.target.getAttribute("data-tab-num");
+
+        tabs.forEach(tab => {
+          if (tab.getAttribute("data-tab-num") == tabNum) {
+            tabs.forEach(item => {
+              item.classList.remove(tabsSelectorActive);
+            });
+            tab.classList.add(tabsSelectorActive);
+          }
+        });
       });
-    }
-  }
-  if (tabsListNumeric) {
-    console.log(tabsListNumeric);
-    tabsListNumeric.forEach(item2 => {
-      item2.addEventListener("click", openStepsTab);
     });
   }
 
+  tabElementActivation(".calc__tabs-block-numeric .calc__tab", ".calc__tabs-content-wrapper .calc__tab-contains");
 
+  tabElementActivation(".calc__rooms-area-radio .calc__radio-button", ".calc__rooms-area-wrapper .calc__rooms-area-contant");
+
+  tabElementActivation(".calc__tabs-block .calc__tab", ".calc__tabs-blocks-content-wrapper .calc__tab-block-content");
 });
 
