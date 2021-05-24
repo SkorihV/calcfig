@@ -4,7 +4,6 @@ import './styles/main.scss'
 
 
 // Подключаем скрипты
-import './scripts/jQueryFormStyler-master/dist/jquery.formstyler.min.js'
 import './scripts/main.js'
 
 

@@ -7,7 +7,7 @@
   <meta name="format-detection" content="telephone=no">
 
 
-  
+
   <title>Калькулятор</title>
 
   <link rel="stylesheet" type="text/css" href="./dist/main.css"/>
@@ -125,7 +125,7 @@
               <label for="chek3" class="calc__checkbox-label">Ремонт "white Box"</label>
             </div>
           </div>
-      </div> 
+      </div>
     </div>
 
     <div class="container-box">
@@ -133,7 +133,7 @@
       <div class="boxes-card-lists">
         <div class="calc__box-card-list">
           <div class="calc__card-list-title">Комната 1</div>
-          <div class="calc__card-list-folder-wrapper"> 
+          <div class="calc__card-list-folder-wrapper">
             <div class="calc__card-list-long">
               <input class="calc__card-list-input" type="text" size="3">
               <label class="calc__card-list-label">Длинна м<span class="calc__sup">2</span></label>
@@ -152,7 +152,7 @@
 
         <div class="calc__box-card-list">
           <div class="calc__card-list-title">Комната 2</div>
-          <div class="calc__card-list-folder-wrapper"> 
+          <div class="calc__card-list-folder-wrapper">
             <div class="calc__card-list-long">
               <input class="calc__card-list-input" type="text" size="3">
               <label class="calc__card-list-label">Длинна м<span class="calc__sup">2</span></label>
@@ -167,7 +167,7 @@
 
         <div class="calc__box-card-list">
           <div class="calc__card-list-title">Комната 3</div>
-          <div class="calc__card-list-folder-wrapper">  
+          <div class="calc__card-list-folder-wrapper">
             <div class="calc__card-list-long">
               <input class="calc__card-list-input" type="text" size="3">
               <label class="calc__card-list-label">Длинна м<span class="calc__sup">2</span></label>
@@ -235,7 +235,7 @@
     <div class="container-box">
       <div class="box-title">Табы</div>
       <div class="box-field"></div>
-      <div class="calc__tabs-block"> 
+      <div class="calc__tabs-block">
         <div class="calc__tab" data-tab-num="1">Сантехника</div>
         <div class="calc__tab" data-tab-num="2">Кондиционирование</div>
         <div class="calc__tab" data-tab-num="3">Отделочные материалы</div>
@@ -243,10 +243,10 @@
     </div>
 
 
-    <div class="container-box"> 
+    <div class="container-box">
       <div class="box-title">Табы с цифрами</div>
       <div class="box-field"></div>
-      <div class="calc__tabs-block-numeric"> 
+      <div class="calc__tabs-block-numeric">
         <div class="calc__tab calc__tab_active" data-tab-num="1">
           <span class="calc__tab-num">1</span>Параметры помещений
         </div>
@@ -263,7 +263,7 @@
     <div class="container-box">
       <div class="box-title">+ / -</div>
       <div class="box-field"></div>
-      <div class="calc__current-control-panel"> 
+      <div class="calc__current-control-panel">
         <div class="calc__button-minus">-</div>
         <input class="calc__current-control-panel-input" type="text" placeholder="%" size="3">
         <div class="calc__button-plus">+</div>
@@ -274,11 +274,11 @@
     <div class="container-box">
       <div class="box-title">Инпуты</div>
       <div class="sub-title">Disabled</div>
-      <div class="calc__input"> 
+      <div class="calc__input">
         <input type="text" class="calc__input-item" value="какой-то текст" disabled>
       </div>
       <div class="sub-title">Active</div>
-      <div class="calc__input"> 
+      <div class="calc__input">
         <input type="text" class="calc__input-item"  value="какой-то текст">
       </div>
     </div>
@@ -286,7 +286,7 @@
     <div class="container-box">
       <div class="box-title"></div>
       <div class="box-field"></div>
-      <div class="boxes-name"> 
+      <div class="boxes-name">
       </div>
     </div>
   </form>
@@ -296,7 +296,7 @@
 <form method="GET" action="#" class="calc-wrapper">
   <div class="calc__left-half">
   <div class="box-title">Рассчитайте стоимость ипотеки</div>
-  <div class="calc__tabs-block-numeric"> 
+  <div class="calc__tabs-block-numeric">
         <div class="calc__tab" data-tab-num="1">
           <span class="calc__tab-num">1</span>Параметры помещений
         </div>
@@ -317,7 +317,7 @@
         <div class="calc__preson-side">
           <div class="calc__small-title">Имя менеджера</div>
           <input type="text" class="calc__input-item"  placeholder="Укажите имя менеджера">
-        </div>        
+        </div>
       </div>
       <div class="calc__center-side">
         <div class="calc__box-element-list">
@@ -341,7 +341,7 @@
         <div class="calc__radio-container">
           <input class="calc__radio-button" type="radio" name="room-area" id="room-area3" data-tab-num="3">
           <label for="room-area3" class="calc__radio-label">Только общая площадь</label>
-        </div>        
+        </div>
       </div>
       <div class="calc__rooms-area-wrapper">
 <!-- начало первого таба в радио группе подбора площади-->
@@ -392,7 +392,7 @@
         <div class="calc__rooms-area-contant" data-tab-num="2">
           <div class="calc__box-card-list">
             <div class="calc__card-list-title">Комната 1</div>
-            <div class="calc__card-list-folder-wrapper"> 
+            <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">
                 <label class="calc__card-list-label">Площадь</label>
@@ -402,7 +402,7 @@
           </div>
           <div class="calc__box-card-list">
             <div class="calc__card-list-title">Кухня</div>
-            <div class="calc__card-list-folder-wrapper"> 
+            <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">
                 <label class="calc__card-list-label">Площадь</label>
@@ -412,7 +412,7 @@
           </div>
           <div class="calc__box-card-list">
             <div class="calc__card-list-title">Коридор</div>
-            <div class="calc__card-list-folder-wrapper"> 
+            <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">
                 <label class="calc__card-list-label">Площадь</label>
@@ -422,7 +422,7 @@
           </div>
           <div class="calc__box-card-list">
             <div class="calc__card-list-title">Зал</div>
-            <div class="calc__card-list-folder-wrapper"> 
+            <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">
                 <label class="calc__card-list-label">Площадь</label>
@@ -432,7 +432,7 @@
           </div>
           <div class="calc__box-card-list">
             <div class="calc__card-list-title">Ванная</div>
-            <div class="calc__card-list-folder-wrapper"> 
+            <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">
                 <label class="calc__card-list-label">Площадь</label>
@@ -445,7 +445,7 @@
         <div class="calc__rooms-area-contant" data-tab-num="3">
           <div class="calc__box-card-list">
             <div class="calc__card-list-title">Общая площадь квартиры</div>
-            <div class="calc__card-list-folder-wrapper"> 
+            <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">
                 <label class="calc__card-list-label">Площадь</label>
@@ -585,7 +585,7 @@
             <label for="chek-mul-window-2" class="calc__checkbox-label">Подоконники из искусственного камня</label>
           </div>
         </div>
-      </div>      
+      </div>
     </div>
 <!-- Конец блока со списком списков-->
       <div class="calc__white-box">
@@ -598,7 +598,7 @@
       </div>
       .
 
-      <div class="calc__navigation-panel"> 
+      <div class="calc__navigation-panel">
         <div class="calc__button-back-step">
           <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -620,16 +620,16 @@
 
 <!--третий третий -->
     <div class="calc__tab-contains" data-tab-num="3">
-      <div class="calc__tabs-block"> 
+      <div class="calc__tabs-block">
         <div class="calc__tab" data-tab-num="1">Сантехника</div>
         <div class="calc__tab" data-tab-num="2">Кондиционирование</div>
         <div class="calc__tab" data-tab-num="3">Отделочные материалы</div>
       </div>
       <div class="calc__tabs-blocks-content-wrapper">
         <div class="calc__tab-block-content" data-tab-num="1">
-          
+
           <div class="calc__box-card-list-wrapper">
-            <div class="calc__box-card-list-current">          
+            <div class="calc__box-card-list-current">
               <div class="calc__card-list-current-title">Ванна</div>
               <div class="calc__card-list-current-num-box">
                 <div class="calc__button-minus">-</div>
@@ -638,7 +638,7 @@
               </div>
             </div>
 
-            <div class="calc__box-card-list-current">          
+            <div class="calc__box-card-list-current">
               <div class="calc__card-list-current-title">Душевая кабина / поддон</div>
               <div class="calc__card-list-current-num-box">
                 <div class="calc__button-minus">-</div>
@@ -647,7 +647,7 @@
               </div>
             </div>
 
-            <div class="calc__box-card-list-current">          
+            <div class="calc__box-card-list-current">
               <div class="calc__card-list-current-title">Унитаз напольный</div>
               <div class="calc__card-list-current-num-box">
                 <div class="calc__button-minus">-</div>
@@ -656,7 +656,7 @@
               </div>
             </div>
 
-            <div class="calc__box-card-list-current">          
+            <div class="calc__box-card-list-current">
               <div class="calc__card-list-current-title">Унитаз с инсталяцией</div>
               <div class="calc__card-list-current-num-box">
                 <div class="calc__button-minus">-</div>
@@ -665,17 +665,7 @@
               </div>
             </div>
 
-            <div class="calc__box-card-list-current">          
-              <div class="calc__card-list-current-title">Раковина</div>
-              <div class="calc__card-list-current-num-box">
-                <div class="calc__button-minus">-</div>
-                <input type="text" class="calc__card-list-current-imput" value="0" size="3">
-                <div class="calc__button-plus">+</div>
-              </div>
-            </div>
-          
-
-            <div class="calc__box-card-list-current">          
+            <div class="calc__box-card-list-current">
               <div class="calc__card-list-current-title">Раковина</div>
               <div class="calc__card-list-current-num-box">
                 <div class="calc__button-minus">-</div>
@@ -684,7 +674,17 @@
               </div>
             </div>
 
-            <div class="calc__box-card-list-current">          
+
+            <div class="calc__box-card-list-current">
+              <div class="calc__card-list-current-title">Раковина</div>
+              <div class="calc__card-list-current-num-box">
+                <div class="calc__button-minus">-</div>
+                <input type="text" class="calc__card-list-current-imput" value="0" size="3">
+                <div class="calc__button-plus">+</div>
+              </div>
+            </div>
+
+            <div class="calc__box-card-list-current">
               <div class="calc__card-list-current-title">Полотенцесушитель</div>
               <div class="calc__card-list-current-num-box">
                 <div class="calc__button-minus">-</div>
@@ -693,7 +693,7 @@
               </div>
             </div>
 
-            <div class="calc__box-card-list-current">          
+            <div class="calc__box-card-list-current">
               <div class="calc__card-list-current-title">Водонагреватель / бойлер</div>
               <div class="calc__card-list-current-num-box">
                 <div class="calc__button-minus">-</div>
@@ -702,7 +702,7 @@
               </div>
             </div>
 
-            <div class="calc__box-card-list-current">          
+            <div class="calc__box-card-list-current">
               <div class="calc__card-list-current-title">Гигиенический душ</div>
               <div class="calc__card-list-current-num-box">
                 <div class="calc__button-minus">-</div>
@@ -714,7 +714,7 @@
         </div>
 
         <div class="calc__tab-block-content" data-tab-num="2">
-          <div class="calc__box-card-list-current">          
+          <div class="calc__box-card-list-current">
             <div class="calc__card-list-current-title">Кондиционирование</div>
             <div class="calc__card-list-current-num-box">
               <div class="calc__button-minus">-</div>
@@ -740,15 +740,15 @@
         </div>
         <div class="calc__tab-block-content" data-tab-num="3">
 
-        <div class="boxes-selector-list">
-          <select class="calc__selector-list" data-placeholder="Выберите менеджера">
-            <option value="Выберите менеджера">Выберите менеджера</option>
-            <option value="Малютин Илья">Малютин Илья</option>
-            <option value="Ферман Александра">Ферман Александра</option>
-          </select>
-        </div>
+          <div class="boxes-selector-list">
+            <select class="calc__selector-list" data-placeholder="Выберите менеджера">
+              <option value="Выберите менеджера">Выберите менеджера</option>
+              <option value="Малютин Илья">Малютин Илья</option>
+              <option value="Ферман Александра">Ферман Александра</option>
+            </select>
+          </div>
 
-        <div class="calc__box-element-list">
+          <div class="calc__box-element-list">
 
             <div class="calc__checbox-container-befor">
               <div class="sub-title-checkbox-before">Розетки / выключатели</div>
@@ -771,9 +771,9 @@
             </div>
           </div>
 
-        </div>
+          </div>
       </div>
-      <div class="calc__navigation-panel"> 
+      <div class="calc__navigation-panel">
         <div class="calc__button-back-step">
           <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -785,12 +785,32 @@
       </div>
     </div>
   </div>
-  <div class="calc__right-half"></div>
+</div>
+  <!-- вторая половина калькулятора  -->
+  <div class="calc__right-half">
+    <div class="calc__total-cost-wrapper">
+      <div class="calc__total-cost-title">Итого всего</div>
+      <div class="calc__total-cost-value">888888</div>
+    </div>
+    <div class="calc__total-cost-metrs-wrapper">
+      <div class="calc__total-cost-metrs-title">Итого за кв. м</div>
+      <div class="calc__total-cost-metrs">55555</div>
+    </div>
+    <div class="calc__total-cost-work-wrapper">
+      <div class="calc__total-costwork-title">Стоимость работ</div>
+      <div class="calc__total-cost-work">44343</div>
+    </div>
+    <div class="calc__total-cost-material-wrapper">
+      <div class="calc__total-cost-material-title">Стоимость черновых материалов</div>
+      <div class="calc__total-cost-material">46456</div>
+    </div>
+    <div class="calc__btn-watch-kp">Посмотреть КП</div>
+    <div class="calc__btn-loaded-kp">Скачать КП</div>
+  </div>
 </form>
 
 
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="./src/scripts/jQueryFormStyler-master/dist/jquery.formstyler.min.js"></script>
 <script src="./dist/main.js"></script>
 </body>

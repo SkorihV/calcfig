@@ -869,7 +869,8 @@ body {
 .calc-wrapper {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-around;
+  align-items: flex-start;
 	width: 100%;
 	height: auto;
 	position: relative;
@@ -882,10 +883,6 @@ body {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-	}
-
-	.calc__right-half {
-		background: #e0e0e0;
 	}
 }
 
@@ -1043,3 +1040,97 @@ body {
 		}
 	}
 }
+
+.calc__right-half {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 360px;
+  color: #FFFFFF;
+  font-family: Bliss Pro;
+  font-weight: 500;
+  background: #1BAD58;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725);
+  padding: 30px;
+  margin-top: 10px;
+  border-radius: 30px;
+  box-sizing: border-box;
+	.calc__total-cost {
+		&-wrapper,
+    &-metrs-wrapper {
+			display: flex;
+			flex-direction: column;
+      align-items: flex-start;
+			width: 100%;
+		}
+    &-title {
+      font-size: 20px;
+      line-height: 108.5%;
+      opacity: 0.7;
+      mask-mode: 10px;
+    }
+    &-value {
+      font-size: 42px;
+      line-height: 108.5%;
+      margin-bottom: 23px;
+    }
+    &-metrs-title,
+    &-material-title,
+    &-work-title {
+      font-size: 16px;
+      line-height: 108.5%;
+      margin-bottom: 10px;
+
+    }
+    &-metrs {
+      opacity: 0.7;
+      font-size: 28px;
+      line-height: 108.5%;
+      margin-bottom: 28px;
+    }
+    &-work-wrapper,
+    &-material-wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-work,
+    &-material {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 108.5%;
+    }
+	}
+  .calc__btn-watch-kp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 100%;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 108.5%;
+    border: 1px solid #F5F5F5;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 16px 0;
+    cursor: pointer;
+    margin-bottom: 12px;
+  }
+  .calc__btn-loaded-kp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 100%;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 108.5%;
+    border: 1px solid #F5F5F5;
+    box-sizing: border-box;
+    border-radius: 30px;
+    padding: 16px 0;
+    cursor: pointer;
+    color: #1BAD58;
+    background-color: white;
+  }
+}
+
+

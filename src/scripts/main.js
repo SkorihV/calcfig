@@ -8,16 +8,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   currentBoxes.forEach(item => {
     item.addEventListener("click", (e) => {
-      const inputCurrent = item.querySelector(".calc__card-list-current-imput");
-      console.log(inputCurrent.value);
-
       const target = e.target;
+      const inputCurrent = item.querySelector(".calc__card-list-current-imput");
+      let valueInput = parseInt (inputCurrent.value);
       if (target.classList.contains("calc__button-plus")) {
-
+        if (isNaN(valueInput))  {
+          inputCurrent.value = 0;
+          return;
+        }
+        inputCurrent.value = valueInput + 1;
       }
-
       if (target.classList.contains("calc__button-minus")) {
-
+        if (isNaN(valueInput)) {
+          inputCurrent.value = 0;
+          return;
+        }
+        valueInput--;
+        if (valueInput < 0 ) {
+          valueInput = 0;
+        }
+        inputCurrent.value = valueInput;
       }
     })
   });

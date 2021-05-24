@@ -1,7 +1,6 @@
 {
   "name": "calc",
   "version": "1.0.0",
-  "description": "",
   "main": "src/app.js",
   "scripts": {
     "dev": "webpack --watch",
@@ -24,5 +23,14 @@
     "node-sass": "^4.14.1",
     "path": "^0.12.7",
     "style-loader": "^1.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkorihV/calcfig.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SkorihV/calcfig/issues"
+  },
+  "homepage": "https://github.com/SkorihV/calcfig#readme",
+  "description": ""
 }
