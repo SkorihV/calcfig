@@ -3,43 +3,79 @@ document.addEventListener("DOMContentLoaded", () => {
   const multipleElementItem = document.querySelectorAll(".calc__multiselect-list");
   const cardList = document.querySelectorAll("input.calc__card-list-input");
   const currentBoxes = document.querySelectorAll(".calc__card-list-current-num-box");
+  const selectorListTitleItems = document.querySelectorAll(".calc__selector-list-cheked");
+  const selectorListItems = document.querySelectorAll(".calc__selector-list-wrapper");
+
 
   /*Обрабатываем все элементы с выбором количества */
 
   currentBoxes.forEach(item => {
+    let boxInputValue = Number(item.querySelector(".calc__card-list-current-imput").value);
+    if (!boxInputValue) {
+      item.classList.add("calc__card-list-current-num-box_disabled");
+    }
     item.addEventListener("click", (e) => {
       const target = e.target;
       const inputCurrent = item.querySelector(".calc__card-list-current-imput");
-      let valueInput = parseInt (inputCurrent.value);
+      let valueInput = parseInt(inputCurrent.value);
       if (target.classList.contains("calc__button-plus")) {
-        if (isNaN(valueInput))  {
+
+        if (isNaN(valueInput)) {
           inputCurrent.value = 0;
+          item.classList.add("calc__card-list-current-num-box_disabled");
           return;
         }
         inputCurrent.value = valueInput + 1;
+        item.classList.remove("calc__card-list-current-num-box_disabled");
       }
+
       if (target.classList.contains("calc__button-minus")) {
         if (isNaN(valueInput)) {
           inputCurrent.value = 0;
           return;
         }
         valueInput--;
-        if (valueInput < 0 ) {
+        if (valueInput <= 0) {
           valueInput = 0;
+          item.classList.add("calc__card-list-current-num-box_disabled");
         }
         inputCurrent.value = valueInput;
       }
-    })
+    });
   });
 
+/*Обрабатываем функционал выпадения у списков */
   let openMultilist = (e) => {
-    e.target.classList.toggle("calc__multiselect-list-title_open");
+    let className = e.target.classList[0]
+    e.target.classList.toggle(className + "_open");
   }
   if (multipleElementItem) {
-    multipleElementItem.forEach((item, index) => {
+    multipleElementItem.forEach((item) => {
       item.addEventListener("click", openMultilist);
     });
   }
+
+  if (selectorListTitleItems) {
+    selectorListTitleItems.forEach((item) => {
+      item.addEventListener("click", openMultilist);
+    });
+  }
+
+  /*Обработка выбора у выпадающего списка и подставление результата в тайтл */
+  selectorListItems.forEach(item => {
+    item.addEventListener("click", function (e) {
+      let mainItem = this;
+      let chekedTitle = mainItem.querySelector(".calc__selector-list-cheked");
+      let target = e.target;
+
+      if (target.classList.contains("calc__selector-list-item")) {
+        chekedTitle.innerHTML = target.innerHTML;
+      }
+    })
+  })
+
+
+
 
   /*Добавляем небольшие эффекты для импутов с подсказками*/
   let changeinputCardList = (e) => {
@@ -88,9 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   tabElementActivation(".calc__tabs-block-numeric .calc__tab", ".calc__tabs-content-wrapper .calc__tab-contains");
-
   tabElementActivation(".calc__rooms-area-radio .calc__radio-button", ".calc__rooms-area-wrapper .calc__rooms-area-contant");
-
   tabElementActivation(".calc__tabs-block .calc__tab", ".calc__tabs-blocks-content-wrapper .calc__tab-block-content");
 });
 

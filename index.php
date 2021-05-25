@@ -201,11 +201,17 @@
       <div class="box-title">Селекторы</div>
       <div class="box-field"></div>
       <div class="boxes-selector-list">
-        <select class="calc__selector-list" data-placeholder="Выберите менеджера">
-          <option value="Выберите менеджера">Выберите менеджера</option>
-          <option value="Малютин Илья">Малютин Илья</option>
-          <option value="Ферман Александра">Ферман Александра</option>
-        </select>
+        <div class="calc__selector-list-title">Стиль</div>
+        <div class="calc__selector-list-wrapper">
+          <div class="calc__selector-list-cheked">Стиль не выбран</div>
+          <div class="calc_selector-list-items">
+            <div class="calc__selector-list-item">ПИК Классический Светлый</div>
+            <div class="calc__selector-list-item">ПИК Классический Темный</div>
+            <div class="calc__selector-list-item">ПИК Современный Светлый</div>
+            <div class="calc__selector-list-item">ПИК Современный Темный</div>
+            <div class="calc__selector-list-item">КАСКАД Классический</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -740,13 +746,19 @@
         </div>
         <div class="calc__tab-block-content" data-tab-num="3">
 
-          <div class="boxes-selector-list">
-            <select class="calc__selector-list" data-placeholder="Выберите менеджера">
-              <option value="Выберите менеджера">Выберите менеджера</option>
-              <option value="Малютин Илья">Малютин Илья</option>
-              <option value="Ферман Александра">Ферман Александра</option>
-            </select>
+        <div class="boxes-selector-list">
+        <div class="calc__selector-list-title">Стиль</div>
+        <div class="calc__selector-list-wrapper">
+          <div class="calc__selector-list-cheked">Стиль не выбран</div>
+          <div class="calc_selector-list-items">
+            <div class="calc__selector-list-item">ПИК Классический Светлый</div>
+            <div class="calc__selector-list-item">ПИК Классический Темный</div>
+            <div class="calc__selector-list-item">ПИК Современный Светлый</div>
+            <div class="calc__selector-list-item">ПИК Современный Темный</div>
+            <div class="calc__selector-list-item">КАСКАД Классический</div>
           </div>
+        </div>
+      </div>
 
           <div class="calc__box-element-list">
 
@@ -782,36 +794,53 @@
           </svg>
           Назад
         </div>
+        <div class="calc__btn-watch-kp_mobile">Открыть КП</div>
       </div>
     </div>
   </div>
 </div>
   <!-- вторая половина калькулятора  -->
   <div class="calc__right-half">
-    <div class="calc__total-cost-wrapper">
-      <div class="calc__total-cost-title">Итого всего</div>
-      <div class="calc__total-cost-value">888888</div>
+    <div class="calc__total-cost_pc">
+      <div class="calc__total-cost-wrapper">
+        <div class="calc__total-cost-title">Итого всего</div>
+        <div class="calc__total-cost-value">888888</div>
+      </div>
+      <div class="calc__total-cost-metrs-wrapper">
+        <div class="calc__total-cost-metrs-title">Итого за кв. м</div>
+        <div class="calc__total-cost-metrs">55555</div>
+      </div>
+      <div class="calc__total-cost-work-wrapper">
+        <div class="calc__total-cost-work-title">Стоимость работ</div>
+        <div class="calc__total-cost-work">44343</div>
+      </div>
+      <div class="calc__total-cost-material-wrapper">
+        <div class="calc__total-cost-material-title">Стоимость черновых материалов</div>
+        <div class="calc__total-cost-material">46456</div>
+      </div>
+      <div class="calc__btn-watch-kp">Посмотреть КП</div>
+      <div class="calc__btn-loaded-kp">Скачать КП</div>
     </div>
-    <div class="calc__total-cost-metrs-wrapper">
-      <div class="calc__total-cost-metrs-title">Итого за кв. м</div>
-      <div class="calc__total-cost-metrs">55555</div>
+    <div class="calc__total-cost_mobile">
+
+      <div class="calc__total-cost-work-wrapper">
+        <div class="calc__total-cost-work-title">Работа</div>
+        <div class="calc__total-cost-work">44343</div>
+      </div>
+      <div class="calc__total-cost-material-wrapper">
+        <div class="calc__total-cost-material-title">Материалы</div>
+        <div class="calc__total-cost-material">46456</div>
+      </div>
+      <div class="calc__total-cost-wrapper">
+        <div class="calc__total-cost-title">Итого</div>
+        <div class="calc__total-cost-value">888888</div>
+      </div>
     </div>
-    <div class="calc__total-cost-work-wrapper">
-      <div class="calc__total-costwork-title">Стоимость работ</div>
-      <div class="calc__total-cost-work">44343</div>
-    </div>
-    <div class="calc__total-cost-material-wrapper">
-      <div class="calc__total-cost-material-title">Стоимость черновых материалов</div>
-      <div class="calc__total-cost-material">46456</div>
-    </div>
-    <div class="calc__btn-watch-kp">Посмотреть КП</div>
-    <div class="calc__btn-loaded-kp">Скачать КП</div>
   </div>
 </form>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="./src/scripts/jQueryFormStyler-master/dist/jquery.formstyler.min.js"></script>
 <script src="./dist/main.js"></script>
 </body>
 </html>

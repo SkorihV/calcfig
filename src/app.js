@@ -7,15 +7,6 @@ import './styles/main.scss'
 import './scripts/main.js'
 
 
-(function ($) {
-  $(function () {
-    $('select, multiple').styler({
-      selectSearch: true,
-    });
-  });
-})(jQuery);
-
-
 
 
 
