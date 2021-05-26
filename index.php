@@ -132,7 +132,9 @@
       <div class="box-title">Карточки, списки</div>
       <div class="boxes-card-lists">
         <div class="calc__box-card-list">
-          <div class="calc__card-list-title">Комната 1</div>
+          <div class="calc__card-list-title">Комната 1
+            <input class="calc__card-list-title-input" type="text">
+          </div>
           <div class="calc__card-list-folder-wrapper">
             <div class="calc__card-list-long">
               <input class="calc__card-list-input" type="text" size="3">
