@@ -13,19 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
   service.currenChangeInput(currentBoxes);
 
   /*Обрабатываем функционал выпадения у списков */
-  /*
-    if (multipleElementItem) {
-      multipleElementItem.forEach((item) => {
-        item.addEventListener("click", service.openMultilist);
-      });
-    }
-    if (selectorListTitleItems) {
-      selectorListTitleItems.forEach((item) => {
-        item.addEventListener("click", service.openMultilist);
-      });
-    }*/
 
-  service.openMultilistHandler("calc__multiselect-list-title", "calc__box-element-list");
+  if (multipleElementItem) {
+    multipleElementItem.forEach((item) => {
+      item.addEventListener("click", service.openMultilist);
+    });
+  }
+  if (selectorListTitleItems) {
+    selectorListTitleItems.forEach((item) => {
+      item.addEventListener("click", service.openMultilist);
+    });
+  }
+
+  //service.openMultilistHandler("calc__multiselect-list-title", "calc__box-element-list");
   /*service.openMultilistHandler("calc__selector-list-cheked");*/
 
 
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /*Добавляем небольшие эффекты для импутов с подсказками*/
   if (cardList) {
     cardList.forEach((item) => {
-      item.addEventListener("change", service.changeinputCardListPlaceholder);
+      item.addEventListener("input", service.changeinputCardListPlaceholder);
     });
   }
 
