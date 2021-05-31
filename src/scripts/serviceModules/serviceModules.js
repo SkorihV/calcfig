@@ -43,6 +43,7 @@ class Service {
       return;
     }
   }
+
   /*меняем значение в инпутах количества */
   currenChangeInput(mass) {
     mass.forEach(item => {
@@ -80,10 +81,12 @@ class Service {
       });
     });
   }
+
   openMultilist(e) {
     let className = e.target.classList[0]
     e.target.classList.toggle(className + "_open");
   }
+  
   changeinputCardListPlaceholder(e) {
     if (e.target.value.length > 0) {
       e.target.classList.add("calc__card-list-input_active");
@@ -190,4 +193,4 @@ class Service {
 
 }
 
-export default Service ;
+export default Service;

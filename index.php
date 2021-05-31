@@ -308,7 +308,7 @@
   </div>
 
 
-<form method="GET" action="#" class="calc-wrapper">
+<form method="GET" action="#" class="calc-wrapper" id="calculator">
   <div class="calc__left-half">
   <div class="box-title">Рассчитайте стоимость ипотеки</div>
   <div class="calc__tabs-block-numeric">
