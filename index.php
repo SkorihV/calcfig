@@ -132,7 +132,8 @@
       <div class="box-title">Карточки, списки</div>
       <div class="boxes-card-lists">
         <div class="calc__box-card-list">
-          <div class="calc__card-list-title">Комната 1
+          <div class="calc__card-list-wrapper-title">
+            <div class="calc__card-list-title">Комната 1</div> 
             <input class="calc__card-list-title-input" type="text">
           </div>
           <div class="calc__card-list-folder-wrapper">
@@ -153,7 +154,10 @@
         </div>
 
         <div class="calc__box-card-list">
-          <div class="calc__card-list-title">Комната 2</div>
+          <div class="calc__card-list-wrapper-title">
+            <div class="calc__card-list-title">Комната 2</div> 
+            <input class="calc__card-list-title-input" type="text">
+          </div>
           <div class="calc__card-list-folder-wrapper">
             <div class="calc__card-list-long">
               <input class="calc__card-list-input" type="text" size="3">
@@ -168,7 +172,10 @@
         </div>
 
         <div class="calc__box-card-list">
-          <div class="calc__card-list-title">Комната 3</div>
+          <div class="calc__card-list-wrapper-title">
+            <div class="calc__card-list-title">Комната 3</div> 
+            <input class="calc__card-list-title-input" type="text">
+          </div>
           <div class="calc__card-list-folder-wrapper">
             <div class="calc__card-list-long">
               <input class="calc__card-list-input" type="text" size="3">
@@ -355,7 +362,10 @@
 <!-- начало первого таба в радио группе подбора площади-->
         <div class="calc__rooms-area-contant" data-tab-num="1">
           <div class="calc__box-card-list">
-            <div class="calc__card-list-title">Комната 1</div>
+            <div class="calc__card-list-wrapper-title">
+              <div class="calc__card-list-title">Комната 1</div> 
+              <input class="calc__card-list-title-input" type="text">
+            </div>
             <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-long">
                 <input class="calc__card-list-input" type="text" size="3">
@@ -369,7 +379,10 @@
             </div>
           </div>
           <div class="calc__box-card-list">
-            <div class="calc__card-list-title">Коридор</div>
+            <div class="calc__card-list-wrapper-title">
+              <div class="calc__card-list-title">Коридор</div> 
+              <input class="calc__card-list-title-input" type="text">
+            </div>
               <div class="calc__card-list-folder-wrapper">
                 <div class="calc__card-list-long">
                   <input class="calc__card-list-input" type="text" size="3">
@@ -382,7 +395,10 @@
             </div>
           </div>
           <div class="calc__box-card-list">
-            <div class="calc__card-list-title">Ванная</div>
+            <div class="calc__card-list-wrapper-title">
+              <div class="calc__card-list-title">Ванная</div> 
+              <input class="calc__card-list-title-input" type="text">  
+            </div>
             <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-long">
                 <input class="calc__card-list-input" type="text" size="3">
@@ -399,7 +415,10 @@
 <!-- начало второго таба в радио группе подбора площади-->
         <div class="calc__rooms-area-contant" data-tab-num="2">
           <div class="calc__box-card-list">
-            <div class="calc__card-list-title">Комната 1</div>
+            <div class="calc__card-list-wrapper-title">
+              <div class="calc__card-list-title">Комната 1</div> 
+              <input class="calc__card-list-title-input" type="text">
+            </div>
             <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">
@@ -409,7 +428,10 @@
             </div>
           </div>
           <div class="calc__box-card-list">
-            <div class="calc__card-list-title">Кухня</div>
+            <div class="calc__card-list-wrapper-title">
+              <div class="calc__card-list-title">Кухня</div> 
+              <input class="calc__card-list-title-input" type="text">  
+            </div>
             <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">
@@ -419,7 +441,10 @@
             </div>
           </div>
           <div class="calc__box-card-list">
-            <div class="calc__card-list-title">Коридор</div>
+            <div class="calc__card-list-wrapper-title">
+              <div class="calc__card-list-title">Коридор</div> 
+              <input class="calc__card-list-title-input" type="text">  
+            </div>
             <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">
@@ -429,7 +454,10 @@
             </div>
           </div>
           <div class="calc__box-card-list">
-            <div class="calc__card-list-title">Зал</div>
+            <div class="calc__card-list-wrapper-title">
+              <div class="calc__card-list-title">Зал</div> 
+              <input class="calc__card-list-title-input" type="text">  
+            </div>
             <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">
@@ -439,7 +467,10 @@
             </div>
           </div>
           <div class="calc__box-card-list">
-            <div class="calc__card-list-title">Ванная</div>
+            <div class="calc__card-list-wrapper-title">
+              <div class="calc__card-list-title">Ванная</div> 
+              <input class="calc__card-list-title-input" type="text">  
+            </div>
             <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">
@@ -452,7 +483,7 @@
 <!-- начало третьего таба в радио группе подбора площади-->
         <div class="calc__rooms-area-contant" data-tab-num="3">
           <div class="calc__box-card-list">
-            <div class="calc__card-list-title">Общая площадь квартиры</div>
+            <div class="calc__card-list-wrapper-title">Общая площадь квартиры</div>
             <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">

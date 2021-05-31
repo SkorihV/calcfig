@@ -562,24 +562,34 @@ body {
   border-radius: 30px;
   padding: 15px 15px 15px 35px;
 }
-.calc__box-card-list .calc__card-list-title {
+.calc__box-card-list .calc__card-list-wrapper-title {
+  display: flex;
   flex-grow: 4;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.calc__box-card-list .calc__card-list-wrapper-title .calc__card-list-title {
+  flex: 1 1 100%;
   font-family: Bliss Pro;
   font-weight: 500;
   font-size: 18px;
   position: relative;
   cursor: pointer;
 }
-.calc__box-card-list .calc__card-list-title-input {
+.calc__box-card-list .calc__card-list-wrapper-title .calc__card-list-title-input {
   display: none;
   align-items: center;
   flex: 1 1 100%;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   border: none;
   border-bottom: 2px dotted #e1e5e7;
 }
-.calc__box-card-list .calc__card-list-title_edit + .calc__card-list-title-input {
+.calc__box-card-list .calc__card-list-wrapper-title_edit .calc__card-list-title {
+  display: none;
+}
+.calc__box-card-list .calc__card-list-wrapper-title_edit .calc__card-list-title-input {
   display: flex;
 }
 .calc__box-card-list .calc__card-list-folder-wrapper {

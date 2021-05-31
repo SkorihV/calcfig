@@ -395,23 +395,33 @@ body {
 	box-sizing: border-box;
 	border-radius: 30px;
 	padding: 15px 15px 15px 35px;
-	.calc__card-list-title {
+	.calc__card-list-wrapper-title {
+		display: flex;
 		flex-grow: 4;
-		font-family: Bliss Pro;
-		font-weight: 500;
-		font-size: 18px;
-		position: relative;
-		cursor: pointer;
-		&-input {
+		flex-direction: column;
+		align-items: flex-start;
+		& .calc__card-list-title {
+			flex: 1 1 100%;
+			font-family: Bliss Pro;
+			font-weight: 500;
+			font-size: 18px;
+			position: relative;
+			cursor: pointer;
+		}
+		& .calc__card-list-title-input {
 			display: none;
 			align-items: center;
 			flex: 1 1 100%;
 			position: absolute;
-			top: 0;
+			top: 50%;
+   		transform: translateY(-50%);
 			border: none;
 			border-bottom: 2px dotted #e1e5e7;
 		}
-		&_edit + .calc__card-list-title-input {
+		&_edit  .calc__card-list-title {
+			display: none;
+		}
+		&_edit  .calc__card-list-title-input {
 			display: flex;
 		}
 	}
