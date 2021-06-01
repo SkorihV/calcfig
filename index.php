@@ -327,7 +327,7 @@
       <div class="calc__person-wrapper">
         <div class="calc__preson-side">
           <div class="calc__small-title">Название объекта</div>
-          <input type="text" class="calc__input-item"  placeholder="Введите название объекта">
+          <input type="text" class="calc__input-item" data-handler-name="handlerNameObject"  placeholder="Введите название объекта">
         </div>
         <div class="calc__preson-side">
           <div class="calc__small-title">Имя менеджера</div>
