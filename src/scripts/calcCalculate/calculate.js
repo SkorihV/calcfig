@@ -11,12 +11,15 @@ class Calc {
         },
         obj3: {
           q1: "q1",
-          q2: "q2"
+          q2: "q2",
+          name: "wwwwd"
         }
       },
       ew: 111
     };
     this.calcWrapper = document.querySelector("#calculator");
+    this.firstFindElem = true;
+    this.currentElement = {};
   }
 
   init() {
@@ -41,7 +44,7 @@ class Calc {
         if (target.hasAttribute("data-handler-name")) {
           if (this.checkOfVoidFunc(target.getAttribute("data-handler-name"))) {
             let handlerFunc = this[target.getAttribute("data-handler-name")];
-            handlerFunc();
+            handlerFunc(target);
           }
         }
 
@@ -52,7 +55,7 @@ class Calc {
   createDataGroup(name) {
     return;
   }
-/*проверяем существует ли функция в классе */
+  /*проверяем существует ли функция в классе */
   checkOfVoidFunc(funcName) {
     if (typeof this[funcName] == "function") {
       return true;
@@ -60,7 +63,7 @@ class Calc {
       return false;
     }
   }
-/*проверяем существует ли переменная */
+  /*проверяем существует ли переменная */
   checkOfVoidParam(paramName) {
     if (paramName) {
       return true;
@@ -68,8 +71,8 @@ class Calc {
       return false;
     }
   }
-/* рекурсивно обходим обхект */
-  findFieldInCalc(findValue, obj = this.getData()) {
+  /* рекурсивно обходим обхект */
+  findFieldInCalc2(findValue, obj = this.getData()) {
     for (let key in obj) {
       let value = obj[key];
       //     console.log(value);
@@ -83,19 +86,49 @@ class Calc {
     return false;
   }
 
+
+  findFieldInCalc(findValue, obj = this.getData()) {
+    let checkFind = false;
+    for (let key in obj) {
+
+      let value = obj[key];
+      checkFind = value === findValue;
+
+      if (!checkFind && typeof value === "object") {
+        checkFind = this.findFieldInCalc(findValue, value);
+      }
+      if (checkFind && this.firstFindElem) {
+        this.firstFindElem = !this.firstFindElem;
+        /* тут должна запускаться функция обработчик которая заменит данные */
+        return true;
+      }
+      if (checkFind) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  addElementForData(element) {
+
+  }
   createElementData(params) {
     let element = {};
 
-    if (params.type) {
-
+    for (let key in params) {
+      if(key == "objectName"){
+        continue;
+      }
+      element[key] = params[key];
     }
-
 
     return element;
   }
 
-  handlerNameObject() {
-    alert("aaa");
+  handlerNameObjectSingle(target) {
+    console.log(target.dataset);
+    
+    this.createElementData(target.dataset)
   }
 }
 

@@ -10,5 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     wrapper: document.querySelector("#calculator")
   });
   calc.init();
-  console.log(calc.findFieldInCalc(1111));
+  console.log(calc.findFieldInCalc("wwwwd"));
+  console.log(calc.getData());
 });

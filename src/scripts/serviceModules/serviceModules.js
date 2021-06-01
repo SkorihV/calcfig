@@ -33,7 +33,7 @@ class Service {
     this.tabElementActivation(".calc__tabs-block-numeric .calc__tab", ".calc__tabs-content-wrapper .calc__tab-contains");
     this.tabElementActivation(".calc__rooms-area-radio .calc__radio-button", ".calc__rooms-area-wrapper .calc__rooms-area-contant");
     this.tabElementActivation(".calc__tabs-block .calc__tab", ".calc__tabs-blocks-content-wrapper .calc__tab-block-content");
-    
+
     this.dropdownListProcessing(this.selectorListItems);
     this.cloneElementRoomsItem();
     this.editImputNameRoom();
@@ -86,7 +86,7 @@ class Service {
     let className = e.target.classList[0]
     e.target.classList.toggle(className + "_open");
   }
-  
+
   changeinputCardListPlaceholder(e) {
     if (e.target.value.length > 0) {
       e.target.classList.add("calc__card-list-input_active");
@@ -150,6 +150,7 @@ class Service {
     wrapperElements.forEach(item => {
       /*отображаем инпут при двойном клике на название */
       item.addEventListener("dblclick", (e) => {
+        console.log(1);
         const target = e.target;
         if (target.classList.contains("calc__card-list-title")) {
           const contentNode = target.innerText;
@@ -166,7 +167,9 @@ class Service {
           editNodes.forEach(item => {
             const input = item.querySelector(".calc__card-list-title-input");
             const title = item.querySelector(".calc__card-list-title");
-            title.innerText = input.value;
+            if (input.value) {
+              title.innerText = input.value;
+            }
             item.classList.remove("calc__card-list-wrapper-title_edit");
           });
         }
