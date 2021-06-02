@@ -312,15 +312,15 @@
   <div class="calc__left-half">
   <div class="box-title">Рассчитайте стоимость ипотеки</div>
   <div class="calc__tabs-block-numeric">
-        <div class="calc__tab" data-tab-num="1">
-          <span class="calc__tab-num">1</span>Параметры помещений
-        </div>
-        <div class="calc__tab" data-tab-num="2">
-          <span class="calc__tab-num">2</span>Опции ремонта
-        </div>
-        <div class="calc__tab" data-tab-num="3">
-          <span class="calc__tab-num">3</span>Материалы
-        </div>
+    <div class="calc__tab" data-tab-num="1">
+      <span class="calc__tab-num">1</span>Параметры помещений
+    </div>
+    <div class="calc__tab" data-tab-num="2">
+      <span class="calc__tab-num">2</span>Опции ремонта
+    </div>
+    <div class="calc__tab" data-tab-num="3">
+      <span class="calc__tab-num">3</span>Материалы
+    </div>
   </div>
   <div class="calc__tabs-content-wrapper">
     <div class="calc__tab-contains" data-tab-num="1">
