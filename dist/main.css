@@ -629,7 +629,7 @@ body {
   cursor: pointer;
   transition-property: transform, font-size;
   transition-delay: 0.2s, 0.2s;
-  transition-duration: 0.5s, 0.5s;
+  transition-duration: 0.2s, 0.2s;
   transition-timing-function: linear, linear;
 }
 .calc__box-card-list .calc__card-list-folder-wrapper .calc__card-list-long .calc__card-list-label .calc__sup, .calc__box-card-list .calc__card-list-folder-wrapper .calc__card-list-width .calc__card-list-label .calc__sup, .calc__box-card-list .calc__card-list-folder-wrapper .calc__card-list-area .calc__card-list-label .calc__sup {
