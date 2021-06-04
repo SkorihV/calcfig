@@ -860,8 +860,8 @@
       <div class="calc__btn-watch-kp">Посмотреть КП</div>
       <div class="calc__btn-loaded-kp">Скачать КП</div>
     </div>
-    <div class="calc__total-cost_mobile">
 
+    <div class="calc__total-cost_mobile">
       <div class="calc__total-cost-work-wrapper">
         <div class="calc__total-cost-work-title">Работа</div>
         <div class="calc__total-cost-work">44343</div>

@@ -300,6 +300,7 @@ body {
 
 .form-test-fields {
   width: 100%;
+  display: none;
 }
 
 .box-title {
