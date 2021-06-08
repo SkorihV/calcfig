@@ -6,6 +6,7 @@ class Service {
     this.currentBoxes = document.querySelectorAll(".calc__card-list-current-num-box");
     this.selectorListTitleItems = document.querySelectorAll(".calc__selector-list-cheked");
     this.selectorListItems = document.querySelectorAll(".calc__selector-list-wrapper");
+    this.roomsListElements = document.querySelectorAll(".calc__rooms-area-contant .calc__box-card-list");
   }
 
   init() {
@@ -37,11 +38,23 @@ class Service {
     this.dropdownListProcessing(this.selectorListItems);
     this.cloneElementRoomsItem();
     this.editImputNameRoom();
+
+    this.roomsListElements.forEach(item => {
+      this.initDataTitleFromList(item);
+    })
+
   }
   checkThisVoid(param) {
     if (!param) {
       return;
     }
+  }
+
+  initDataTitleFromList(element) {
+    let title = element.querySelector(".calc__card-list-title").innerText;
+
+    element.setAttribute("data-title", title);
+
   }
 
   /*меняем значение в инпутах количества */
@@ -150,7 +163,6 @@ class Service {
     wrapperElements.forEach(item => {
       /*отображаем инпут при двойном клике на название */
       item.addEventListener("dblclick", (e) => {
-        console.log(1);
         const target = e.target;
         if (target.classList.contains("calc__card-list-title")) {
           const contentNode = target.innerText;
@@ -160,17 +172,20 @@ class Service {
       });
       /*скрываем инпут при клиеке вне инпута */
       item.addEventListener("click", (e) => {
-        const target = e.target;
-        if ((!target.classList.contains("calc__card-list-title")) ||
+        let target = e.target;
+        console.log(target.classList.contains("calc__card-list-title"));
+
+        if ((!target.classList.contains("calc__card-list-title")) &&
           (!target.classList.contains("calc__card-list-title-input"))) {
-          const editNodes = target.querySelectorAll(".calc__rooms-area-contant .calc__card-list-wrapper-title");
-          editNodes.forEach(item => {
-            const input = item.querySelector(".calc__card-list-title-input");
-            const title = item.querySelector(".calc__card-list-title");
+          this.roomsListElements.forEach(item2 => {
+            const input = item2.querySelector(".calc__card-list-title-input");
+            const title = item2.querySelector(".calc__card-list-title");
+
             if (input.value) {
               title.innerText = input.value;
             }
-            item.classList.remove("calc__card-list-wrapper-title_edit");
+            this.initDataTitleFromList(item2);
+            item2.querySelector(".calc__card-list-wrapper-title").classList.remove("calc__card-list-wrapper-title_edit");
           });
         }
       });

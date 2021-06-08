@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
 
-
-
   <title>Калькулятор</title>
 
   <link rel="stylesheet" type="text/css" href="./dist/main.css"/>
@@ -328,39 +326,70 @@
         <div class="calc__preson-side">
           <div class="calc__small-title">Название объекта</div>
           <input type="text" class="calc__input-item" 
-          data-handler-name="handlerNameObjectSingle"
+          data-handler-name="handlerInputObjectSingle"
+          data-type-func="input"
           data-title="Название объекта" 
-          data-price="111"
+          data-price="0"
           data-name="objectName"
-          data-type="single" 
           placeholder="Введите название объекта">
         </div>
         <div class="calc__preson-side">
           <div class="calc__small-title">Имя менеджера</div>
-          <input type="text" class="calc__input-item"  placeholder="Укажите имя менеджера">
+          <input type="text" class="calc__input-item" 
+            data-handler-name="handlerInputObjectSingle"
+            data-type-func="input"
+            data-title="Имя менеджера" 
+            data-price="0"
+            data-name="managerName"
+            placeholder="Укажите имя менеджера">
         </div>
       </div>
       <div class="calc__center-side">
         <div class="calc__box-element-list">
           <div class="calc__checbox-container">
-            <input id="wall" type="checkbox" class="calc__checkbox" value="wall">
+            <input id="wall" type="checkbox" class="calc__checkbox" 
+              data-handler-name="handlerChekedObjectSingle"
+              data-type-func="click"
+              data-title="Стены от застройщика" 
+              data-price="555"
+              data-name="wallFromDeveloper">
             <label for="wall" class="calc__checkbox-label">Стены от застройщика</label>
           </div>
         </div>
-        <input type="text" class="calc__input-item"  placeholder="Высота потолков">
+        <input type="text" class="calc__input-item" 
+        data-handler-name="handlerInputObjectSingle"
+        data-type-func="input"
+        data-title="Высота потолков" 
+        data-price="0"
+        data-name="heightCeiling"
+        placeholder="Высота потолков">
       </div>
       <div class="calc__text">Заполните габариты помещений. Если выяснить габариты помещений невозможно, нажмите вкладку "Только общая площадь"</div>
       <div class="calc__rooms-area-radio">
         <div class="calc__radio-container">
-          <input class="calc__radio-button" type="radio" name="room-area" id="room-area1"  data-tab-num="1">
+          <input class="calc__radio-button" type="radio" name="room-area" id="room-area1"
+            data-handler-name="hadlerCreateRadioObj"
+            data-func-name="click"
+            data-title="Все данные потолков" 
+            data-name="dataRooms"
+            data-tab-num="1">
           <label for="room-area1" class="calc__radio-label">Все данные</label>
         </div>
         <div class="calc__radio-container">
-          <input class="calc__radio-button" type="radio" name="room-area" id="room-area2"  data-tab-num="2">
+          <input class="calc__radio-button" type="radio" name="room-area" id="room-area2"
+            data-handler-name="hadlerCreateRadioObj"
+            data-func-name="click"
+            data-title="Только площадь комнат" 
+            data-name="dataRooms"  data-tab-num="2">
           <label for="room-area2" class="calc__radio-label">Только площадь комнат</label>
         </div>
         <div class="calc__radio-container">
-          <input class="calc__radio-button" type="radio" name="room-area" id="room-area3" data-tab-num="3">
+          <input class="calc__radio-button" type="radio" name="room-area" id="room-area3"
+            data-handler-name="hadlerCreateRadioObj"
+            data-func-name="click"
+            data-title="Только общая площадь" 
+            data-name="dataRooms"
+            data-tab-num="3">
           <label for="room-area3" class="calc__radio-label">Только общая площадь</label>
         </div>
       </div>
@@ -489,7 +518,10 @@
 <!-- начало третьего таба в радио группе подбора площади-->
         <div class="calc__rooms-area-contant" data-tab-num="3">
           <div class="calc__box-card-list">
-            <div class="calc__card-list-wrapper-title">Общая площадь квартиры</div>
+            <div class="calc__card-list-wrapper-title">
+              <div class="calc__card-list-title">Общая площадь квартиры</div>
+              <input class="calc__card-list-title-input" type="text">  
+            </div>
             <div class="calc__card-list-folder-wrapper">
               <div class="calc__card-list-area">
                 <input class="calc__card-list-input" type="text" size="3">

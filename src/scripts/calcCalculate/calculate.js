@@ -1,22 +1,7 @@
 class Calc {
 
   constructor(data) {
-    this.calcData = {
-      name: "qqq",
-      obj: {
-        name: "www",
-        param: 1111,
-        obj2: {
-          qqq: "ssss"
-        },
-        obj3: {
-          q1: "q1",
-          q2: "q2",
-          name: "wwwwd"
-        }
-      },
-      ew: 111
-    };
+    this.calcData = {};
     this.calcWrapper = document.querySelector("#calculator");
     this.firstFindElem = true;
     this.currentElement = {};
@@ -43,8 +28,12 @@ class Calc {
 
         if (target.hasAttribute("data-handler-name")) {
           if (this.checkOfVoidFunc(target.getAttribute("data-handler-name"))) {
-            let handlerFunc = this[target.getAttribute("data-handler-name")];
-            handlerFunc(target);
+            let handlerFunc = this[target.getAttribute("data-handler-name")].bind(this);
+            target.addEventListener(target.getAttribute("data-type-func"), (e) => {
+              e.stopPropagation();
+              handlerFunc(e);
+              console.log(this.getData());
+            })
           }
         }
 
@@ -86,7 +75,6 @@ class Calc {
     return false;
   }
 
-
   findFieldInCalc(findValue, obj = this.getData()) {
     let checkFind = false;
     for (let key in obj) {
@@ -109,26 +97,27 @@ class Calc {
     return false;
   }
 
-  addElementForData(element) {
-
-  }
-  createElementData(params) {
-    let element = {};
-
+  createElementData(nameobj, params, value) {
+    let nameElement = nameobj;
+    this.calcData[nameElement] = {};
     for (let key in params) {
-      if(key == "objectName"){
-        continue;
-      }
-      element[key] = params[key];
+      this.calcData[nameElement][key] = params[key];
     }
-
-    return element;
+    this.calcData[nameElement].value = value;
+    return this.calcData[nameElement];
   }
 
-  handlerNameObjectSingle(target) {
-    console.log(target.dataset);
-    
-    this.createElementData(target.dataset)
+  handlerInputObjectSingle(e) {
+    let target = e.target;
+    this.createElementData(target.getAttribute("data-name"), target.dataset, target.value);
+  }
+  handlerChekedObjectSingle(e) {
+    let target = e.target;
+    this.createElementData(target.getAttribute("data-name"), target.dataset, target.checked);
+  }
+  hadlerCreateRadioObj(e) {
+    let target = e.target;
+    this.createElementData(target.getAttribute("data-name"), target.dataset, null);
   }
 }
 
