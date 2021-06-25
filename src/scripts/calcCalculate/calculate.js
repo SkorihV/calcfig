@@ -60,7 +60,7 @@ class Calc {
       return false;
     }
   }
-  /* рекурсивно обходим обхект */
+  /* рекурсивно обходим объект */
   findFieldInCalc2(findValue, obj = this.getData()) {
     for (let key in obj) {
       let value = obj[key];
@@ -118,6 +118,55 @@ class Calc {
   hadlerCreateRadioObj(e) {
     let target = e.target;
     this.createElementData(target.getAttribute("data-name"), target.dataset, null);
+  }
+
+  handlerRoomsAreaFunc(e) {
+    let target = e.target;
+    let nameObj = this.transliter(target.dataset.title);
+    console.log(nameObj);
+    console.log(this.calcData);
+
+    this.calcData.dataRooms[nameObj] = {};
+
+    let long = target.querySelector(".calc__card-list-long .calc__card-list-input");
+    if (long) {
+      this.calcData.dataRooms[nameObj].long = long.value;
+    }
+
+    let width = target.querySelector(".calc__card-list-width .calc__card-list-input");
+    if (width) {
+      this.calcData.dataRooms[nameObj].width = width.value;
+    }
+
+    let area = target.querySelector(".calc__card-list-area .calc__card-list-input");
+    console.log(area)
+    if (area) {
+      this.calcData.dataRooms[nameObj].area = area.value;
+    }
+
+  }
+
+
+  transliter(w) {
+    let answer = '';
+    let converter = {
+      'а': 'a',    'б': 'b',    'в': 'v',    'г': 'g',    'д': 'd',
+      'е': 'e',    'ё': 'e',    'ж': 'zh',   'з': 'z',    'и': 'i',
+      'й': 'y',    'к': 'k',    'л': 'l',    'м': 'm',    'н': 'n',
+      'о': 'o',    'п': 'p',    'р': 'r',    'с': 's',    'т': 't',
+      'у': 'u',    'ф': 'f',    'х': 'h',    'ц': 'c',    'ч': 'ch',
+      'ш': 'sh',   'щ': 'sch',  'ь': '',     'ы': 'y',    'ъ': '',
+      'э': 'e',    'ю': 'yu',   'я': 'ya',   ' ': ''
+    };
+    let word = w.toLowerCase();
+    for (var i = 0; i < word.length; ++i ) {
+      if (converter[word[i]] == undefined){
+        answer += word[i];
+      } else {
+        answer += converter[word[i]];
+      }
+    }   
+    return answer;
   }
 }
 

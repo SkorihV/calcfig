@@ -369,7 +369,7 @@
         <div class="calc__radio-container">
           <input class="calc__radio-button" type="radio" name="room-area" id="room-area1"
             data-handler-name="hadlerCreateRadioObj"
-            data-func-name="click"
+            data-type-func="click"
             data-title="Все данные потолков" 
             data-name="dataRooms"
             data-tab-num="1">
@@ -378,15 +378,16 @@
         <div class="calc__radio-container">
           <input class="calc__radio-button" type="radio" name="room-area" id="room-area2"
             data-handler-name="hadlerCreateRadioObj"
-            data-func-name="click"
+            data-type-func="click"
             data-title="Только площадь комнат" 
-            data-name="dataRooms"  data-tab-num="2">
+            data-name="dataRooms"  
+            data-tab-num="2">
           <label for="room-area2" class="calc__radio-label">Только площадь комнат</label>
         </div>
         <div class="calc__radio-container">
           <input class="calc__radio-button" type="radio" name="room-area" id="room-area3"
             data-handler-name="hadlerCreateRadioObj"
-            data-func-name="click"
+            data-type-func="click"
             data-title="Только общая площадь" 
             data-name="dataRooms"
             data-tab-num="3">
@@ -396,7 +397,10 @@
       <div class="calc__rooms-area-wrapper">
 <!-- начало первого таба в радио группе подбора площади-->
         <div class="calc__rooms-area-contant" data-tab-num="1">
-          <div class="calc__box-card-list">
+          <div class="calc__box-card-list"
+            data-handler-name="handlerRoomsAreaFunc"
+            data-type-func="mouseleave"
+          >
             <div class="calc__card-list-wrapper-title">
               <div class="calc__card-list-title">Комната 1</div> 
               <input class="calc__card-list-title-input" type="text">
@@ -413,7 +417,10 @@
               <div class="calc__button-plus">+</div>
             </div>
           </div>
-          <div class="calc__box-card-list">
+          <div class="calc__box-card-list"
+            data-handler-name="handlerRoomsAreaFunc"
+            data-type-func="mouseleave"
+          >
             <div class="calc__card-list-wrapper-title">
               <div class="calc__card-list-title">Коридор</div> 
               <input class="calc__card-list-title-input" type="text">
@@ -429,7 +436,10 @@
                 </div>
             </div>
           </div>
-          <div class="calc__box-card-list">
+          <div class="calc__box-card-list"
+            data-handler-name="handlerRoomsAreaFunc"
+            data-type-func="mouseleave"
+          >
             <div class="calc__card-list-wrapper-title">
               <div class="calc__card-list-title">Ванная</div> 
               <input class="calc__card-list-title-input" type="text">  
@@ -449,7 +459,10 @@
         </div>
 <!-- начало второго таба в радио группе подбора площади-->
         <div class="calc__rooms-area-contant" data-tab-num="2">
-          <div class="calc__box-card-list">
+          <div class="calc__box-card-list"
+            data-handler-name="handlerRoomsAreaFunc"
+            data-type-func="mouseleave"
+          >
             <div class="calc__card-list-wrapper-title">
               <div class="calc__card-list-title">Комната 1</div> 
               <input class="calc__card-list-title-input" type="text">
@@ -462,7 +475,10 @@
               <div class="calc__button-plus">+</div>
             </div>
           </div>
-          <div class="calc__box-card-list">
+          <div class="calc__box-card-list"
+            data-handler-name="handlerRoomsAreaFunc"
+            data-type-func="mouseleave"
+          >
             <div class="calc__card-list-wrapper-title">
               <div class="calc__card-list-title">Кухня</div> 
               <input class="calc__card-list-title-input" type="text">  
@@ -475,7 +491,10 @@
               <div class="calc__button-plus">+</div>
             </div>
           </div>
-          <div class="calc__box-card-list">
+          <div class="calc__box-card-list"
+            data-handler-name="handlerRoomsAreaFunc"
+            data-type-func="mouseleave"
+          >
             <div class="calc__card-list-wrapper-title">
               <div class="calc__card-list-title">Коридор</div> 
               <input class="calc__card-list-title-input" type="text">  
@@ -488,7 +507,10 @@
               <div class="calc__button-plus">+</div>
             </div>
           </div>
-          <div class="calc__box-card-list">
+          <div class="calc__box-card-list"
+            data-handler-name="handlerRoomsAreaFunc"
+            data-type-func="mouseleave"
+          >
             <div class="calc__card-list-wrapper-title">
               <div class="calc__card-list-title">Зал</div> 
               <input class="calc__card-list-title-input" type="text">  
@@ -501,7 +523,10 @@
               <div class="calc__button-plus">+</div>
             </div>
           </div>
-          <div class="calc__box-card-list">
+          <div class="calc__box-card-list"
+            data-handler-name="handlerRoomsAreaFunc"
+            data-type-func="mouseleave"
+          >
             <div class="calc__card-list-wrapper-title">
               <div class="calc__card-list-title">Ванная</div> 
               <input class="calc__card-list-title-input" type="text">  
@@ -517,7 +542,10 @@
         </div>
 <!-- начало третьего таба в радио группе подбора площади-->
         <div class="calc__rooms-area-contant" data-tab-num="3">
-          <div class="calc__box-card-list">
+          <div class="calc__box-card-list"
+            data-handler-name="handlerRoomsAreaFunc"
+            data-type-func="mouseleave"
+          >
             <div class="calc__card-list-wrapper-title">
               <div class="calc__card-list-title">Общая площадь квартиры</div>
               <input class="calc__card-list-title-input" type="text">  
