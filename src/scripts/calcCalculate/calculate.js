@@ -25,14 +25,23 @@ class Calc {
   название функции обработчика данного поля если поле есть 
   и функция с таким названием существет, то запускам её*/
   handlingCalcWrapper() {
+console.log("1112222");
+
     if (this.checkOfVoidParam(this.calcWrapper)) {
       this.calcWrapper.addEventListener("click", (e) => {
         let target = e.target;
-
+console.log("111");
         if (target.hasAttribute("data-handler-name")) {
+console.log("222");
+
           if (this.checkOfVoidFunc(target.getAttribute("data-handler-name"))) {
+            console.log(333);
+
             let handlerFunc = this[target.getAttribute("data-handler-name")].bind(this);
             target.addEventListener(target.getAttribute("data-type-func"), (e) => {
+
+console.log("444");
+
               //e.stopPropagation();
               handlerFunc(e);
               console.log(this.getData());
@@ -199,15 +208,9 @@ class Calc {
         }
       }
     })
-
-    console.log(massCheck);
-
     params.title = title;
     params.elementsList = massCheck;
-    
-
     this.createElementData(name, params);
-    console.log(name);
   }
 
 
