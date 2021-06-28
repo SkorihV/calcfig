@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="./dist/main.css"/>
 </head>
 <body>
-
+<!--
 <div class="standart-felds">
     <form action="#" class="form-test-fields">
       <div class="container-box dislpay-none">
@@ -28,14 +28,20 @@
             <div class="sub-title">hover</div>
           </div>
           <div class="boxes">
-            <div class="calc__button-next-step">Следующий шаг
+            <div class="calc__button-next-step"
+              data-handler-name="nextStep"
+              data-type-func="click"
+            >Следующий шаг
               <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M13.5306 6.39386C13.8235 6.10096 13.8235 5.62609 13.5306 5.3332L8.75766 0.560225C8.46477 0.267331 7.9899 0.267331 7.697 0.560225C7.40411 0.853118 7.40411 1.32799 7.697 1.62088L11.9396 5.86353L7.697 10.1062C7.40411 10.3991 7.40411 10.8739 7.697 11.1668C7.9899 11.4597 8.46477 11.4597 8.75766 11.1668L13.5306 6.39386ZM0.000305176 6.61353H13.0003V5.11353H0.000305176V6.61353Z"
                   fill="white" />
               </svg>
             </div>
-            <div class="calc__button-next-step calc__button-next-step_hover">Следующий шаг
+            <div class="calc__button-next-step calc__button-next-step_hover"
+            data-handler-name="nextStep"
+            data-type-func="click"
+            >Следующий шаг
               <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M13.5306 6.39386C13.8235 6.10096 13.8235 5.62609 13.5306 5.3332L8.75766 0.560225C8.46477 0.267331 7.9899 0.267331 7.697 0.560225C7.40411 0.853118 7.40411 1.32799 7.697 1.62088L11.9396 5.86353L7.697 10.1062C7.40411 10.3991 7.40411 10.8739 7.697 11.1668C7.9899 11.4597 8.46477 11.4597 8.75766 11.1668L13.5306 6.39386ZM0.000305176 6.61353H13.0003V5.11353H0.000305176V6.61353Z"
@@ -44,7 +50,10 @@
             </div>
           </div>
           <div class="boxes">
-            <div class="calc__button-back-step">
+            <div class="calc__button-back-step"
+              data-handler-name="backStep"
+              data-type-func="click"
+            >
               <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967L5.24264 0.696699C5.53553 0.403806 6.01041 0.403806 6.3033 0.696699C6.59619 0.989593 6.59619 1.46447 6.3033 1.75736L2.06066 6L6.3033 10.2426C6.59619 10.5355 6.59619 11.0104 6.3033 11.3033C6.01041 11.5962 5.53553 11.5962 5.24264 11.3033L0.46967 6.53033ZM14 6.75H1V5.25H14V6.75Z"
@@ -53,7 +62,10 @@
               Назад
             </div>
 
-            <div class="calc__button-back-step calc__button-back-step_hover">
+            <div class="calc__button-back-step calc__button-back-step_hover"
+              data-handler-name="backStep"
+              data-type-func="click"
+            >
               <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967L5.24264 0.696699C5.53553 0.403806 6.01041 0.403806 6.3033 0.696699C6.59619 0.989593 6.59619 1.46447 6.3033 1.75736L2.06066 6L6.3033 10.2426C6.59619 10.5355 6.59619 11.0104 6.3033 11.3033C6.01041 11.5962 5.53553 11.5962 5.24264 11.3033L0.46967 6.53033ZM14 6.75H1V5.25H14V6.75Z"
@@ -259,7 +271,7 @@
     <div class="container-box">
       <div class="box-title">Табы с цифрами</div>
       <div class="box-field"></div>
-      <div class="calc__tabs-block-numeric">
+      <div class="calc__tabs-block-numeric" is="calc__tabs-block-numeric">
         <div class="calc__tab calc__tab_active" data-tab-num="1">
           <span class="calc__tab-num">1</span>Параметры помещений
         </div>
@@ -304,24 +316,24 @@
     </div>
   </form>
   </div>
-
+-->
 
 <form method="GET" action="#" class="calc-wrapper" id="calculator">
   <div class="calc__left-half">
   <div class="box-title">Рассчитайте стоимость ипотеки</div>
-  <div class="calc__tabs-block-numeric">
-    <div class="calc__tab" data-tab-num="1">
+  <div class="calc__tabs-block-numeric ">
+    <div class="calc__tab calc__tab_active" data-tab-num="0">
       <span class="calc__tab-num">1</span>Параметры помещений
     </div>
-    <div class="calc__tab" data-tab-num="2">
+    <div class="calc__tab" data-tab-num="1">
       <span class="calc__tab-num">2</span>Опции ремонта
     </div>
-    <div class="calc__tab" data-tab-num="3">
+    <div class="calc__tab" data-tab-num="2">
       <span class="calc__tab-num">3</span>Материалы
     </div>
   </div>
   <div class="calc__tabs-content-wrapper">
-    <div class="calc__tab-contains" data-tab-num="1">
+    <div class="calc__tab-contains calc__tab-contains_active" data-tab-num="0">
       <div class="calc__person-wrapper">
         <div class="calc__preson-side">
           <div class="calc__small-title">Название объекта</div>
@@ -560,7 +572,10 @@
         </div>
       </div>
       <div class="calc__navigation-panel">
-        <div class="calc__button-next-step">Следующий шаг
+        <div class="calc__button-next-step"
+          data-handler-name="nextStep"
+          data-type-func="click"
+        >Следующий шаг
           <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M13.5306 6.39386C13.8235 6.10096 13.8235 5.62609 13.5306 5.3332L8.75766 0.560225C8.46477 0.267331 7.9899 0.267331 7.697 0.560225C7.40411 0.853118 7.40411 1.32799 7.697 1.62088L11.9396 5.86353L7.697 10.1062C7.40411 10.3991 7.40411 10.8739 7.697 11.1668C7.9899 11.4597 8.46477 11.4597 8.75766 11.1668L13.5306 6.39386ZM0.000305176 6.61353H13.0003V5.11353H0.000305176V6.61353Z"
@@ -571,122 +586,151 @@
 
     </div>
     <!--Второй шаг -->
-    <div class="calc__tab-contains" data-tab-num="2">
+    <div class="calc__tab-contains" data-tab-num="1">
 <!-- Начало блока со списком списков-->
     <div class="calc__multiselect-list-wrapper">
-      <div class="calc__multiselect-list" data-name-group="heating">
-        <div class="calc__multiselect-list-title">Отопление</div>
+
+      <div class="calc__multiselect-list">
+        <div class="calc__multiselect-list-title"
+          data-name-group="heating"
+          data-handler-name="handlerMultiChek"
+          data-type-func="click"
+        >Отопление</div>
         <div class="calc__box-element-list">
           <div class="calc__checbox-container">
-            <input id="chek-mul-heating-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-heating-1" type="checkbox" class="calc__checkbox" value="chek1" data-price="555">
             <label for="chek-mul-heating-1" class="calc__checkbox-label">Замена систем отопления на коллекторную (лучевую)</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-heating-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-heating-2" type="checkbox" class="calc__checkbox" value="chek1" data-price="555">
             <label for="chek-mul-heating-2" class="calc__checkbox-label">Замена радиаторов"</label>
           </div>
         </div>
       </div>
 
       <div class="calc__multiselect-list" >
-        <div class="calc__multiselect-list-title" data-name-group="noise">Шумоизоляция</div>
+        <div class="calc__multiselect-list-title" 
+          data-name-group="noise"
+          data-handler-name="handlerMultiChek"
+          data-type-func="click"
+        >Шумоизоляция</div>
         <div class="calc__box-element-list">
           <div class="calc__checbox-container">
-            <input id="chek-mul-noise-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-noise-1" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-noise-1" class="calc__checkbox-label">Шумоизоляция стен</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-noise-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-noise-2" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-noise-2" class="calc__checkbox-label">Шумоизоляция потолка"</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-noise-3" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-noise-3" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-noise-3" class="calc__checkbox-label">Шумоизоляция пола</label>
           </div>
         </div>
       </div>
 
       <div class="calc__multiselect-list" >
-        <div class="calc__multiselect-list-title" data-name-group="vibration">Вибрация и электропароводка</div>
+        <div class="calc__multiselect-list-title" 
+          data-name-group="vibration"
+          data-handler-name="handlerMultiChek"
+          data-type-func="click"
+        >Вибрация и электропароводка</div>
         <div class="calc__box-element-list">
           <div class="calc__checbox-container">
-            <input id="chek-mul-vibration-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-vibration-1" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-vibration-1" class="calc__checkbox-label">Приточная вентиляция</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-vibration-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-vibration-2" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-vibration-2" class="calc__checkbox-label">Электропроводка по потолку</label>
           </div>
         </div>
       </div>
 
       <div class="calc__multiselect-list" >
-        <div class="calc__multiselect-list-title" data-name-group="roof">Потолок</div>
+        <div class="calc__multiselect-list-title" 
+          data-name-group="roof"
+          data-handler-name="handlerMultiChek"
+          data-type-func="click"
+        >Потолок</div>
         <div class="calc__box-element-list">
           <div class="calc__checbox-container">
-            <input id="chek-mul-roof-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-roof-1" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-roof-1" class="calc__checkbox-label">Натяжной потолок</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-roof-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-roof-2" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-roof-2" class="calc__checkbox-label">ГКЛ потолок</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-roof-3" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-roof-3" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-roof-3" class="calc__checkbox-label">ГКЛ потолок + натяжной в санузлах</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-roof-4" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-roof-4" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-roof-4" class="calc__checkbox-label">Штукатурка потолка</label>
           </div>
         </div>
       </div>
 
       <div class="calc__multiselect-list" >
-        <div class="calc__multiselect-list-title" data-name-group="floor">Пол</div>
+        <div class="calc__multiselect-list-title" 
+          data-name-group="floor"
+          data-handler-name="handlerMultiChek"
+          data-type-func="click"
+        >Пол</div>
         <div class="calc__box-element-list">
           <div class="calc__checbox-container">
-            <input id="chek-mul-floor-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-floor-1" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-floor-1" class="calc__checkbox-label">Ламинат</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-floor-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-floor-2" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-floor-2" class="calc__checkbox-label">Паркетная доска на подложку (только ПИК)</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-floor-3" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-floor-3" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-floor-3" class="calc__checkbox-label">Паркетная доска на клей (только ПИК)</label>
           </div>
         </div>
       </div>
 
       <div class="calc__multiselect-list" >
-        <div class="calc__multiselect-list-title" data-name-group="bathroom">Санузел</div>
+        <div class="calc__multiselect-list-title" 
+          data-name-group="bathroom"
+          data-handler-name="handlerMultiChek"
+          data-type-func="click"
+        >Санузел</div>
         <div class="calc__box-element-list">
           <div class="calc__checbox-container">
-            <input id="chek-mul-bathroom-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-bathroom-1" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-bathroom-1" class="calc__checkbox-label">Трубы водопроводные Rehau</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-bathroom-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-bathroom-2" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-bathroom-2" class="calc__checkbox-label">Система защиты от протечек</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-bathroom-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-bathroom-2" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-bathroom-2" class="calc__checkbox-label">Теплый пол в СУ</label>
           </div>
         </div>
       </div>
 
       <div class="calc__multiselect-list" >
-        <div class="calc__multiselect-list-title" data-name-group="window">Окна и балкон</div>
+        <div class="calc__multiselect-list-title" 
+          data-name-group="window"
+          data-handler-name="handlerMultiChek"
+          data-type-func="click"
+        >Окна и балкон</div>
         <div class="calc__box-element-list">
           <div class="calc__checbox-container">
-            <input id="chek-mul-window-1" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-window-1" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-window-1" class="calc__checkbox-label">Утепление балкона</label>
           </div>
           <div class="calc__checbox-container">
-            <input id="chek-mul-window-2" type="checkbox" class="calc__checkbox" value="chek1">
+            <input id="chek-mul-window-2" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
             <label for="chek-mul-window-2" class="calc__checkbox-label">Подоконники из искусственного камня</label>
           </div>
         </div>
@@ -696,15 +740,21 @@
       <div class="calc__white-box">
         <div class="calc__box-element-list">
           <div class="calc__checbox-container">
-            <input id="white-1" type="checkbox" class="calc__checkbox" value="chek1">
-            <label for="white-1" class="calc__checkbox-label">Ремонт "white Box"</label>
+            <input id="white-1" type="checkbox" class="calc__checkbox" value="chek1" data-price="4342">
+            <label for="white-1" class="calc__checkbox-label"
+              data-handler-name=""
+              data-type-func="click"
+            >Ремонт "white Box"</label>
           </div>
         </div>
       </div>
       .
 
       <div class="calc__navigation-panel">
-        <div class="calc__button-back-step">
+        <div class="calc__button-back-step"
+          data-handler-name="backStep"
+          data-type-func="click"
+        >
           <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967L5.24264 0.696699C5.53553 0.403806 6.01041 0.403806 6.3033 0.696699C6.59619 0.989593 6.59619 1.46447 6.3033 1.75736L2.06066 6L6.3033 10.2426C6.59619 10.5355 6.59619 11.0104 6.3033 11.3033C6.01041 11.5962 5.53553 11.5962 5.24264 11.3033L0.46967 6.53033ZM14 6.75H1V5.25H14V6.75Z"
@@ -712,7 +762,10 @@
           </svg>
           Назад
         </div>
-        <div class="calc__button-next-step">Следующий шаг
+        <div class="calc__button-next-step"
+          data-handler-name="nextStep"
+          data-type-func="click"
+        >Следующий шаг
           <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M13.5306 6.39386C13.8235 6.10096 13.8235 5.62609 13.5306 5.3332L8.75766 0.560225C8.46477 0.267331 7.9899 0.267331 7.697 0.560225C7.40411 0.853118 7.40411 1.32799 7.697 1.62088L11.9396 5.86353L7.697 10.1062C7.40411 10.3991 7.40411 10.8739 7.697 11.1668C7.9899 11.4597 8.46477 11.4597 8.75766 11.1668L13.5306 6.39386ZM0.000305176 6.61353H13.0003V5.11353H0.000305176V6.61353Z"
@@ -724,7 +777,7 @@
     </div>
 
 <!--третий третий -->
-    <div class="calc__tab-contains" data-tab-num="3">
+    <div class="calc__tab-contains" data-tab-num="2">
       <div class="calc__tabs-block">
         <div class="calc__tab" data-tab-num="1">Сантехника</div>
         <div class="calc__tab" data-tab-num="2">Кондиционирование</div>
@@ -885,7 +938,10 @@
           </div>
       </div>
       <div class="calc__navigation-panel">
-        <div class="calc__button-back-step">
+        <div class="calc__button-back-step"
+          data-handler-name="backStep"
+          data-type-func="click"
+        >
           <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M0.46967 6.53033C0.176777 6.23744 0.176777 5.76256 0.46967 5.46967L5.24264 0.696699C5.53553 0.403806 6.01041 0.403806 6.3033 0.696699C6.59619 0.989593 6.59619 1.46447 6.3033 1.75736L2.06066 6L6.3033 10.2426C6.59619 10.5355 6.59619 11.0104 6.3033 11.3033C6.01041 11.5962 5.53553 11.5962 5.24264 11.3033L0.46967 6.53033ZM14 6.75H1V5.25H14V6.75Z"

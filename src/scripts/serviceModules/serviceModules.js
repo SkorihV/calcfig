@@ -1,12 +1,12 @@
 class Service {
 
   constructor() {
-    this.multipleElementItem = document.querySelectorAll(".calc__multiselect-list");
+    this.multipleElementItem = Array.from(document.querySelectorAll(".calc__multiselect-list"));
     this.cardList = document.querySelectorAll("input.calc__card-list-input");
     this.currentBoxes = document.querySelectorAll(".calc__card-list-current-num-box");
-    this.selectorListTitleItems = document.querySelectorAll(".calc__selector-list-cheked");
-    this.selectorListItems = document.querySelectorAll(".calc__selector-list-wrapper");
-    this.roomsListElements = document.querySelectorAll(".calc__rooms-area-contant .calc__box-card-list");
+    this.selectorListTitleItems = Array.from(document.querySelectorAll(".calc__selector-list-cheked"));
+    this.selectorListItems = Array.from(document.querySelectorAll(".calc__selector-list-wrapper"));
+    this.roomsListElements =  Array.from(document.querySelectorAll(".calc__rooms-area-contant .calc__box-card-list"));
   }
 
   init() {
@@ -17,12 +17,12 @@ class Service {
     this.checkThisVoid(this.multipleElementItem);
 
     this.multipleElementItem.forEach((item) => {
-      item.addEventListener("click", this.openMultilist);
+      item.addEventListener("click", this.toggleMultilist);
     });
     this.checkThisVoid(this.selectorListTitleItems);
 
     this.selectorListTitleItems.forEach((item) => {
-      item.addEventListener("click", this.openMultilist);
+      item.addEventListener("click", this.toggleMultilist);
     });
 
     /*Добавляем небольшие эффекты для импутов с подсказками*/
@@ -31,7 +31,7 @@ class Service {
       item.addEventListener("input", this.changeinputCardListPlaceholder);
     });
     /*Обрабатываем нажатие на блок шагов */
-    this.tabElementActivation(".calc__tabs-block-numeric .calc__tab", ".calc__tabs-content-wrapper .calc__tab-contains");
+    //this.tabElementActivation(".calc__tabs-block-numeric .calc__tab", ".calc__tabs-content-wrapper .calc__tab-contains");
     this.tabElementActivation(".calc__rooms-area-radio .calc__radio-button", ".calc__rooms-area-wrapper .calc__rooms-area-contant");
     this.tabElementActivation(".calc__tabs-block .calc__tab", ".calc__tabs-blocks-content-wrapper .calc__tab-block-content");
 
@@ -95,7 +95,7 @@ class Service {
     });
   }
 
-  openMultilist(e) {
+  toggleMultilist(e) {
     let className = e.target.classList[0]
     e.target.classList.toggle(className + "_open");
   }

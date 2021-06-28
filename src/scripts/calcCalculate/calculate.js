@@ -5,6 +5,9 @@ class Calc {
     this.calcWrapper = document.querySelector("#calculator");
     this.firstFindElem = true;
     this.currentElement = {};
+    this.navigationSteps = Array.from(document.querySelectorAll(".calc__tabs-block-numeric .calc__tab"));
+    this.objSteps = Array.from(document.querySelectorAll(".calc__tabs-content-wrapper .calc__tab-contains"));
+    this.currentStep = 0;
   }
 
   init() {
@@ -30,7 +33,7 @@ class Calc {
           if (this.checkOfVoidFunc(target.getAttribute("data-handler-name"))) {
             let handlerFunc = this[target.getAttribute("data-handler-name")].bind(this);
             target.addEventListener(target.getAttribute("data-type-func"), (e) => {
-              e.stopPropagation();
+              //e.stopPropagation();
               handlerFunc(e);
               console.log(this.getData());
             })
@@ -97,7 +100,7 @@ class Calc {
     return false;
   }
 
-  createElementData(nameobj, params, value) {
+  createElementData(nameobj, params, value = null) {
     let nameElement = nameobj;
     this.calcData[nameElement] = {};
     for (let key in params) {
@@ -129,22 +132,84 @@ class Calc {
     this.calcData.dataRooms[nameObj] = {};
 
     let long = target.querySelector(".calc__card-list-long .calc__card-list-input");
-    if (long) {
+    if (!!long) {
       this.calcData.dataRooms[nameObj].long = long.value;
     }
 
     let width = target.querySelector(".calc__card-list-width .calc__card-list-input");
-    if (width) {
+    if (!!width) {
       this.calcData.dataRooms[nameObj].width = width.value;
     }
 
     let area = target.querySelector(".calc__card-list-area .calc__card-list-input");
-    console.log(area)
-    if (area) {
+    if (!!area) {
       this.calcData.dataRooms[nameObj].area = area.value;
     }
 
   }
+
+  computeActiveStep() {
+    this.navigationSteps.forEach(item => {
+      if (item.classList.contains("calc__tab_active")) {
+        this.currentStep = item.dataset.tabNum;
+      }
+    })
+  }
+
+  setStep() {
+    for (let i = 0; i < this.navigationSteps.length; i++) {
+      this.navigationSteps[i].classList.remove("calc__tab_active");
+      this.objSteps[i].classList.remove("calc__tab-contains_active");
+    }
+    this.navigationSteps[this.currentStep].classList.add("calc__tab_active");
+    this.objSteps[this.currentStep].classList.add("calc__tab-contains_active");
+  }
+
+  nextStep() {
+    console.log("было = " + this.currentStep)
+    this.currentStep++;
+    console.log("Стало = " + this.currentStep)
+
+    this.setStep();
+  }
+
+  backStep() {
+    console.log("было = " + this.currentStep)
+    this.currentStep--;
+    console.log("Стало = " + this.currentStep)
+
+    this.setStep();
+  }
+
+  handlerMultiChek(e){
+    let target = e.target;
+    let title = target.innerHTML
+    let name = this.transliter(title);
+    let nextElement = target.nextElementSibling;
+    let elementsCheck = Array.from(nextElement.querySelectorAll(".calc__checkbox"));
+
+    let params = {};
+    let massCheck = [];
+
+    elementsCheck.forEach((item, index) => {
+      if (item.checked) {
+        massCheck[index] = {
+          title : item.nextElementSibling.innerText,
+          price : item.dataset.price
+        }
+      }
+    })
+
+    console.log(massCheck);
+
+    params.title = title;
+    params.elementsList = massCheck;
+    
+
+    this.createElementData(name, params);
+    console.log(name);
+  }
+
 
 
   transliter(w) {
